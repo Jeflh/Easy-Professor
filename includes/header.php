@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Easy Professor</a>
+    <a href="index.php">
+    <img width="300px" src="/src/img/Logo_EasyProfessor.png" alt="">
+    </a>
     <div class="d-flex">
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
