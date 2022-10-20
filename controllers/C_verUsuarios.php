@@ -1,10 +1,9 @@
 <?php
 
-require('models/conexion.php');
+require('models/M_usuarios.php');
 
-$con = new Conexion();
-
-$usuarios = $con->getUsuarios();
+$usuarios = new Usuarios();
+$datos = $usuarios->getUsuarios();
 
 require('views/V_verUsuarios.php');
 

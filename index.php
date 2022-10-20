@@ -1,6 +1,6 @@
 <?php
 
-require('controllers/C_verPanel.php');
+require('controllers/C_verUsuarios.php');
 
 ?>
 
