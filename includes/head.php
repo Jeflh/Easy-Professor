@@ -7,3 +7,7 @@
   <link rel="stylesheet" href="/src/css/normalize.css">
   <link rel="stylesheet" href="/src/css/bootstrap.css">
   <link rel="stylesheet" href="/src/css/styles.css">
+  <link rel="icon" type="image/png" sizes="16x16"  href="/src/img/favicon-16x16.png">
+  <title>Easy Professor</title>
+</head>
+<body>
