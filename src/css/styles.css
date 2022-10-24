@@ -1,0 +1,14 @@
+
+
+body{
+  position: relative;
+  padding-bottom: 5em;
+  min-height: 100vh;
+}
+
+footer {
+  width:100%; 
+  position:absolute; 
+  bottom:0; 
+  
+}
