@@ -2,26 +2,22 @@
 
 class UsuariosModel{
   private $db;
-  private $usuarios;
+  private $usuario;
 
 
   public function __construct(){
     $this->db = Conectar::conexion();
-    $this->usuarios = array();
+    $this->usuario;
   }
 
-  public function getUsuario(){
-    $query = $this->db->query("SELECT * FROM usuarios");
-
-    while($filas = $query->fetch_assoc()){
-      $this->usuarios[] = $filas;
-    }
+  public function getUsuario($usuario){
+    $query = $this->db->query("SELECT '$usuario' FROM usuarios");
+    $this->usuario = $query->fetch_assoc();
     
-    return $this->usuarios;
+    return $this->usuario;
   }
 
-  public function setUsuario($nombre, $apellido, $correo, $password, $grado){
-
+  public function insertarUsuario($nombre, $apellido, $correo, $password, $grado){
     $nombre = mysqli_real_escape_string($this->db, $_POST['nombre']);
     $apellido = mysqli_real_escape_string($this->db, $_POST['apellido']);
     $correo = mysqli_real_escape_string($this->db, $_POST['correo']);
