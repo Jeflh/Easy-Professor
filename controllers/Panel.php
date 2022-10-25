@@ -4,6 +4,6 @@
 
 
 // View
-require('views/panel.php');
+require('views/V_panel.php');
 
 ?>

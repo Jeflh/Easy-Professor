@@ -3,11 +3,11 @@
 class RegistroController {
 
   public function __construct() {
-    require_once 'models/usuario.php';
+    require_once 'models/M_usuario.php';
   }
   
   public function index() {
-    require_once 'views/registro.php';
+    require_once 'views/V_registro.php';
   }
 
   public function validar() {
