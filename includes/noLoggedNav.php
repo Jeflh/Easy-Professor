@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a href="../../index.php">
-    <img width="300px" src="/src/img/Logo_EasyProfessor.png" alt="">
+    <img width="200px" src="/src/img/Logo_EasyProfessor.png" alt="">
     </a>
     <div class="d-flex">
       <div class="collapse navbar-collapse" id="navbarColor01">
