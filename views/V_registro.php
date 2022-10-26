@@ -46,10 +46,10 @@ if (isset($_GET['e'])) {
 }
 ?>
 
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center mb-3">
   <form data-bitwarden-watching="1" action="index.php?c=registro&a=validar" method="POST">
     <fieldset>
-      <legend class="mt-2 text-center">Registro</legend>
+      <legend class="mt-4 text-center text-primary"><h1><strong>Registro</strong></h1></legend>
       <div class="form-group">
         <label for="apellido" class="form-label mt-2">Nombre</label>
         <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="nameHelp" placeholder="Ej. Emmanuel" autocomplete="off">
@@ -61,7 +61,7 @@ if (isset($_GET['e'])) {
       <div class="form-group">
         <label for="correo" class="form-label mt-2">Dirección de correo</label>
         <input name="correo" type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="correo@ejemplo.com" autocomplete="off">
-        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más</small>
+        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico.</small>
       </div>
       <div class="form-group">
         <label for="password" class="form-label mt-2">Contraseña</label>
@@ -90,7 +90,7 @@ if (isset($_GET['e'])) {
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="privacidad" required>
           <label class="form-check-label" for="flexCheckDefault">
-            Estoy de acuerdo con la <a href="">politica de privacidad</a>.
+            He leído y estoy de acuerdo con la <a href="">politica de privacidad</a>.
           </label>
         </div>
         <div class="form-check">
@@ -100,7 +100,9 @@ if (isset($_GET['e'])) {
           </label>
         </div>
       </fieldset>
-      <button type="submit" class="btn btn-primary mt-2">Registrarse</button>
+      <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
+      </div>
     </fieldset>
   </form>
 </div>
