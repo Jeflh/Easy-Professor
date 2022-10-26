@@ -10,10 +10,7 @@ class UsuariosModel{
     $this->usuario;
   }
 
-  public function getUsuario($usuario){
-    $query = $this->db->query("SELECT '$usuario' FROM usuarios");
-    $this->usuario = $query->fetch_assoc();
-    
+  public function getUsuario(){ 
     return $this->usuario;
   }
 
@@ -27,6 +24,14 @@ class UsuariosModel{
     $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
     $query = $this->db->query("INSERT INTO usuarios (nombre, apellido, correo, password, grado) VALUES ('$nombre', '$apellido', '$correo', '$passwordHash', '$grado')");
+  }
+
+  public function consultarUsuario($correo, $password){
+    $correo = mysqli_real_escape_string($this->db, $_POST['correo']);
+
+    $query = $this->db->query("SELECT * FROM usuarios WHERE correo = '$correo'"); 
+    
+    $this->usuario = $query->fetch_assoc();
   }
 }
 
