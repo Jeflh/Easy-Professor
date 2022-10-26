@@ -1,6 +1,37 @@
 <?php
 require_once('includes/head.php');
 require_once('includes/noLoggedNav.php');
+
+if (isset($_GET['e'])) {
+
+  $status = $_GET['e'];
+  $arrayValues = str_split($status);
+  // Se convierte el string en un array para poder evaluar cada caso.
+
+  for ($i = 0; $i < count($arrayValues); $i++) {
+    switch ($arrayValues[$i]) { 
+      // Se evalua cada caso
+      case 1:
+        echo '<div class="text-center alert alert-dismissible alert-danger mt-1 mb-1">
+    <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+    <strong>Correo eléctronico no válido</strong>, por favor introduce un correo válido.
+    </div>';
+        break;
+      case 2:
+        echo '<div class="text-center alert alert-dismissible alert-danger mt-1 mb-1">
+    <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+    <strong>Contraseña vacía</strong>, por favor introduce una contraseña.
+    </div>';
+        break;
+      case 3:
+        echo '<div class="text-center alert alert-dismissible alert-danger mt-1 mb-1">
+    <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+    <strong>El usuario no existe</strong>, por favor verifica el correo y la contraseña.
+    </div>';
+        break;
+    }
+  }
+}
 ?>
 
 <main>

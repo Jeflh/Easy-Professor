@@ -31,7 +31,10 @@ class LoginController{
         // Consulta el usuario en la base de datos
         
         $usuario = $consulta->getUsuario();
-        $auth = password_verify($password, $usuario['password']); // Verifica la contraseña
+        
+        if(isset($usuario['password'])){
+          $auth = password_verify($password, $usuario['password']); // Verifica la contraseña
+        }
 
         if($auth){
 
@@ -45,6 +48,7 @@ class LoginController{
 
         } else {
           $error = '3'; // "El correo o la contraseña son incorrectos";
+          header("Location: index.php?c=login&e=$error");
         }
 
       } else {
