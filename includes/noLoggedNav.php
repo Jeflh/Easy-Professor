@@ -10,7 +10,7 @@
             <a class="btn btn-outline-light ms-2" href="index.php?c=registro">Registrarse</a>
           </li>
           <li>
-            <a class="btn btn-outline-info ms-2" href="/controllers/C_registro.php">Iniciar sesión</a>
+            <a class="btn btn-outline-info ms-2" href="index.php?c=login">Iniciar sesión</a>
           </li>
         </ul>     
       </div>
