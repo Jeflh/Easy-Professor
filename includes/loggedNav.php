@@ -8,13 +8,13 @@
         <ul class="navbar-nav me-auto">
 
           <li class="nav-item">
-            <a class="nav-link active" href="#">Panel de control
+            <a class="nav-link active" href="index.php?c=panel">Panel de control
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link  href="#">Ajustes</a>
+            <a class="nav-link" href="index.php?c=ajustes">Ajustes</a>
           </li>
           <li>
             <a class="btn btn-outline-info ms-2" href="index.php?c=login&a=cerrar">Cerrar sesión</a>

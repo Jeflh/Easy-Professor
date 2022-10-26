@@ -13,13 +13,14 @@ class RegistroController {
   public function validar() {
 
     if(isset($_POST)){
+      $usuario = new UsuariosModel();
+
       $nombre = $_POST['nombre'];
       $apellido = $_POST['apellido'];
       $correo = $_POST['correo'];
       $password = $_POST['password'];
-      $grado = $_POST['grado'];
 
-      $error = '0';
+      $error = '';
       
       if(empty($nombre) || is_numeric($nombre) || preg_match("/[0-9]/", $nombre)){
         $error = '1'; // "El nombre no es válido";
@@ -27,17 +28,20 @@ class RegistroController {
       if(empty($apellido) || is_numeric($apellido) || preg_match("/[0-9]/", $apellido)){
         $error .= '2'; // "El apellido no es válido";
       }
-      if(empty($correo) || !filter_var($correo, FILTER_VALIDATE_EMAIL)){
+      if(empty($correo) || !filter_var($correo, FILTER_VALIDATE_EMAIL) ){
         $error .= '3'; // "El correo no es válido";
       }
+      if($usuario->validarCorreo()){
+        $error .= '4'; // "El correo ya existe";
+      } 
       if(empty($password)){
-        $error .= '4'; // "La contraseña está vacía";
+        $error .= '5'; // "La contraseña está vacía";
       }
-
-      if($error == '0'){
-        $usuario = new UsuariosModel();
-        $usuario->insertarUsuario($nombre, $apellido, $correo, $password, $grado);
-        header("Location: index.php?c=registro&e=0");
+    
+      if($error == ''){
+        $usuario->insertarUsuario();
+        header("Location: index.php?c=login&e=0");
+      
       } else {
         header("Location: index.php?c=registro&e=$error");
       }

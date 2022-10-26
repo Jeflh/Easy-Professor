@@ -9,14 +9,7 @@ if (isset($_GET['e'])) {
   // Se convierte el string en un array para poder evaluar cada caso.
 
   for ($i = 0; $i < count($arrayValues); $i++) {
-    switch ($arrayValues[$i]) { 
-      // 0 = exitoso, 1 = nombre, 2 = apellido, 3 = correo, 4 = contraseña
-      case 0:
-        echo '<div class="text-center alert alert-dismissible alert-success mt-1">
-    <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
-    <strong>Registro exitoso </strong> ya puedes iniciar sesión.
-    </div>';
-        break;
+    switch ($arrayValues[$i]) { // Se evalua cada caso y muestra la alerata correspondiente
       case 1:
         echo '<div class="text-center alert alert-dismissible alert-danger mt-1 mb-1">
     <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
@@ -37,6 +30,12 @@ if (isset($_GET['e'])) {
         break;
       case 4:
         echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
+      <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+      <strong>Correo no válido </strong> el correo ya se encuentra registrado.
+      </div>';
+        break;
+      case 5:
+        echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
     <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
     <strong>Contraseña no válida </strong> no puedes dejar la contraseña vacía.
     </div>';
@@ -49,7 +48,9 @@ if (isset($_GET['e'])) {
 <div class="container d-flex justify-content-center mb-3">
   <form data-bitwarden-watching="1" action="index.php?c=registro&a=validar" method="POST">
     <fieldset>
-      <legend class="mt-4 text-center text-primary"><h1><strong>Registro</strong></h1></legend>
+      <legend class="mt-4 text-center text-primary">
+        <h1><strong>Registro</strong></h1>
+      </legend>
       <div class="form-group">
         <label for="apellido" class="form-label mt-2">Nombre</label>
         <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="nameHelp" placeholder="Ej. Emmanuel" autocomplete="off">
@@ -101,7 +102,7 @@ if (isset($_GET['e'])) {
         </div>
       </fieldset>
       <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
+        <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
       </div>
     </fieldset>
   </form>
