@@ -1,8 +1,13 @@
-
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 body{
   position: relative;
-  padding-bottom: 5em;
+  padding-bottom: 4em;
   min-height: 100vh;
 }
 
