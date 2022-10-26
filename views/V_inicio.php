@@ -6,8 +6,8 @@
 <main>
 
   <div class="container">
-    <h1 class="text-center mt-2">Bienvenido a Easy Professor</h1>
-    <p> En construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción, en construcción</p>
+    <img class="w-100" src="src/img/que_es.jpg" alt="">
+    <img class="w-100" src="src/img/porque.jpg" alt="">
   </div>
 
 </main>
