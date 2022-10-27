@@ -22,10 +22,10 @@ class RegistroController {
 
       $error = '';
       
-      if(empty($nombre) || is_numeric($nombre) || preg_match("/[0-9]/", $nombre)){
+      if(empty($nombre) || is_numeric($nombre)){
         $error = '1'; // "El nombre no es válido";
       }
-      if(empty($apellido) || is_numeric($apellido) || preg_match("/[0-9]/", $apellido)){
+      if(empty($apellido) || is_numeric($apellido)){
         $error .= '2'; // "El apellido no es válido";
       }
       if(empty($correo) || !filter_var($correo, FILTER_VALIDATE_EMAIL) ){
