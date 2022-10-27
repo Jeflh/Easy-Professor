@@ -4,16 +4,16 @@ require_once('includes/loggedNav.php');
 ?>
 
 <main>
-  <h4 class="text-primary text-end me-3">
+<p class="text-primary text-end me-3 mb-0 lead">
     <?php echo $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'] ?>
-  </h4>
+  </p>
 
-  <h4 class="text-info text-end me-3">
+  <p class="text-info text-end me-3 mb-0 lead">
     <?php date_default_timezone_set('America/Mexico_City');
     echo date('d/m/Y'); ?>
-  </h4>
+  </p>
   
-  <h1 class="text-primary text-center mt-3">Panel de control</h1>
+  <h1 class="text-primary text-center">Panel de control</h1>
 
   <div class="container">
     <div class="d-flex justify-content-center">
@@ -22,7 +22,7 @@ require_once('includes/loggedNav.php');
           <h4 class="">Lista de asistencia</h4>
         </div>
         <div class="card-body ">
-          <a href="" class="link-light">
+          <a href="index.php?c=asistencia" class="link-light">
             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-card-list text-center" viewBox="0 0 16 16">
               <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
               <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
@@ -36,7 +36,7 @@ require_once('includes/loggedNav.php');
           <h4 class="">Asignaturas</h4>
         </div>
         <div class="card-body">
-          <a href="" class="link-light">
+          <a href="index.php?c=asignaturas" class="link-light">
             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z" />
               <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -51,7 +51,7 @@ require_once('includes/loggedNav.php');
           <h4 class="">Reporte</h4>
         </div>
         <div class="card-body">
-          <a href="" class="link-light">
+          <a href="index.php?c=reporte" class="link-light">
             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
               <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
               <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
