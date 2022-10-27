@@ -72,12 +72,12 @@ if (isset($_GET['e'])) {
       <div class="form-group">
         <label for="grado" class="form-label mt-4">Grado de tu grupo</label>
         <select class="form-select" id="grado" name="grado">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
+          <option>1er grado</option>
+          <option>2do grado</option>
+          <option>3er grado</option>
+          <option>4to grado</option>
+          <option>5to grado</option>
+          <option>6to grado</option>
         </select>
       </div>
 
