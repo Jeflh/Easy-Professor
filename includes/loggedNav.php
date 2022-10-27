@@ -3,16 +3,9 @@
     <a href="index.php?c=panel">
     <img width="200px" src="/src/img/Logo_EasyProfessor.png" alt="">
     </a>
-    <div class="d-flex">
-      <div class="collapse navbar-collapse" id="navbarColor01">
+    <div class="d-flex text-center">
+      <div class="navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
-
-          <li class="nav-item">
-            <a class="nav-link active" href="index.php?c=panel">Panel de control
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
-
           <li class="nav-item">
             <a class="nav-link" href="index.php?c=ajustes">Ajustes</a>
           </li>
