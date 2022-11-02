@@ -11,12 +11,6 @@ if (isset($_GET['e'])) {
   for ($i = 0; $i < count($arrayValues); $i++) {
     switch ($arrayValues[$i]) {
         // Se evalua cada caso y se muestra la alerta correspondiente
-      case 0:
-        echo '<div class="text-center alert alert-dismissible alert-success mt-1">
-    <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
-    <strong>Registro exitoso </strong> ya puedes iniciar sesión.
-    </div>';
-        break;
       case 1:
         echo '<div class="text-center alert alert-dismissible alert-danger mt-1 mb-1">
     <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
@@ -32,7 +26,7 @@ if (isset($_GET['e'])) {
       case 3:
         echo '<div class="text-center alert alert-dismissible alert-danger mt-1 mb-1">
     <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
-    <strong>El usuario no existe</strong>, por favor verifica el correo y la contraseña.
+    <strong>Contraseña incorrecta</strong>, por favor verifica la contraseña.
     </div>';
         break;
     }
