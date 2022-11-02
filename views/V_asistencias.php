@@ -65,7 +65,7 @@ require_once('includes/loggedNav.php');
         </table>
         <div class="d-grid col">
           <input type="hidden" id="fecha" name="fecha" value="<?php echo $fecha; ?>">
-          <button type="submit" class="btn btn-primary mb-2">Guardar asistencia</button>
+          <button type="submit" class="btn btn-success mb-2">Guardar asistencia</button>
         </div>
       </form>
     </div>
