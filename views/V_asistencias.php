@@ -10,7 +10,7 @@ require_once('includes/loggedNav.php');
 
   <p class="text-info text-end me-3 mb-0 lead">
     <?php date_default_timezone_set('America/Mexico_City');
-    echo date('d/m/Y'); ?>
+    echo date("d/m/Y", strtotime($fecha)); ?>
   </p>
 
   <h1 class="text-primary text-center">Lista de asistencia</h1>
@@ -27,10 +27,12 @@ require_once('includes/loggedNav.php');
           </tr>
         </thead>
         <tbody>
-          <?php $i = 1;
+          <?php $i = 1;   // Se obtienen los datos de cada alumno, se imprime un link con su id.
           foreach ($lista['alumnos'] as $alumno) { ?>
             <tr class="table-light">
-              <th class="text-center" scope="row"><?php echo $i ?></th>
+              <th class="text-center" scope="row">
+                <?php echo '<a href="index.php?c=alumno&a=ver&id='.$alumno['id_alumno'].'">'.$i.'</a>'?>
+              </th>
               <td><?php echo $alumno['apellido']; ?></td>
               <td><?php echo $alumno['nombre']; ?></td>
             </tr>
@@ -62,6 +64,7 @@ require_once('includes/loggedNav.php');
           </tbody>
         </table>
         <div class="d-grid col">
+          <input type="hidden" id="fecha" name="fecha" value="<?php echo $fecha; ?>">
           <button type="submit" class="btn btn-primary mb-2">Guardar asistencia</button>
         </div>
       </form>
