@@ -1,6 +1,7 @@
 <?php
 require_once('includes/head.php');
 require_once('includes/loggedNav.php');
+
 ?>
 
 <main>
@@ -13,8 +14,22 @@ require_once('includes/loggedNav.php');
     echo date("d/m/Y", strtotime($fecha)); ?>
   </p>
 
-  <h1 class="text-primary text-center">Lista de asistencia</h1>
+  
 
+  <?php 
+    if (isset($_GET['e'])) {
+
+      $status = $_GET['e'];
+      
+      if($status == '0'){
+        echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
+        <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+        <strong>Asistencia guardada</strong>, la asistencia se ha actualizado correctamente.
+        </div>';
+      }
+    }
+  ?>
+<h1 class="text-primary text-center">Lista de asistencia</h1>
   <div class="container d-flex justify-content-center">
 
     <div class="col-5">
@@ -41,6 +56,14 @@ require_once('includes/loggedNav.php');
 
         </tbody>
       </table>
+
+      <div class="container d-flex justify-content-start">
+    <form data-bitwarden-watching="1" action="index.php?c=asistencia&a=fecha" method="POST">
+      <?php date_default_timezone_set('America/Mexico_City');?>
+      <input class="mb-2" type="date" name="cambioFecha" id="cambioFecha" value="<?php echo str_replace('/', '-', $fecha); ?>">
+      <button type="submit" class="btn btn-info mb-2">Cambiar fecha</button>
+    </form>
+  </div>
     </div>
 
     <div class="col-2">
@@ -56,13 +79,24 @@ require_once('includes/loggedNav.php');
               <tr class="table-light">
                 <td class="text-center">
                   <div class="form-switch">
-                    <input class="form-check-input w-100" type="checkbox" name="<?php echo $alumno['id_alumno'] ?>" id="<?php echo $alumno['id_alumno'] ?>">
+                    <input class="form-check-input w-100" type="checkbox" name="<?php echo $alumno['id_alumno']; ?>" id="<?php echo $alumno['id_alumno'] ?>" 
+                        <?php 
+                        /*Se recorre la lista de asistencia y se compara con el ID del alumno, cuando los ID coinciden se verifica el estdo de la asistencia, si este es 1 se marca como checked el input, lo que de forma visual nos da la barra encendida. */
+                        foreach($lista['asistencias'] as $asistencia){
+                            if($asistencia['id_alumno'] == $alumno['id_alumno']){
+                              if($asistencia['asistencia'] == 1){
+                               echo 'checked';
+                              }
+                            }
+                        } ?> 
+                    > <!-- Cierre de la etiqueta input -->
                   </div>
                 </td>
               </tr>
             <?php } ?>
           </tbody>
         </table>
+        
         <div class="d-grid col">
           <input type="hidden" id="fecha" name="fecha" value="<?php echo $fecha; ?>">
           <button type="submit" class="btn btn-success mb-2">Guardar asistencia</button>
@@ -71,6 +105,8 @@ require_once('includes/loggedNav.php');
     </div>
   </div>
 
+
+  
 </main>
 
 <?php
