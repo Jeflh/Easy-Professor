@@ -4,7 +4,7 @@ require_once('includes/loggedNav.php');
 ?>
 
 <main>
-<p class="text-primary text-end me-3 mb-0 lead">
+  <p class="text-primary text-end me-3 mb-0 lead">
     <?php echo $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'] ?>
   </p>
 
