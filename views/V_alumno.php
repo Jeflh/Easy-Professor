@@ -12,17 +12,24 @@ $domicilio = $datosAlumno[1][0];
 ?>
 
 <main>
-  <p class="text-primary text-end me-3 mb-0 lead">
-    <?php echo $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'] ?>
-  </p>
+  <div class="container d-flex justify-content-between">
+    <div class="col">
+      <a href="index.php?c=asistencia&f=<?php echo date('Y/m/d')?>" class="btn btn-info mt-3">Regresar</a>
+    </div>
+    <div class="col">
+      <p class="text-primary text-end me-3 mb-0 lead">
+        <?php echo $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'] ?>
+      </p>
 
-  <p class="text-info text-end me-3 mb-0 lead">
-    <?php date_default_timezone_set('America/Mexico_City');
-    echo date('d/m/Y'); ?>
-  </p>
+      <p class="text-info text-end me-3 mb-0 lead">
+        <?php date_default_timezone_set('America/Mexico_City');
+        echo date('d/m/Y'); ?>
+      </p>
+    </div>
+  </div>
 
   <div class="container">
-    <h1 class="text-primary text-center pb-2">Información de alumno</h1>
+    <h1 class="text-primary text-center pb-2"><strong>Información de alumno</strong></h1>
 
     <div class="container d-flex justify-content-evenly border border-3 border-primary">
       <div class="pt-3">
@@ -62,8 +69,8 @@ $domicilio = $datosAlumno[1][0];
     </div>
 
     <div class="d-flex justify-content-between mb-3">
-      <a href="index.php?c=asistencia&f=<?php echo date('Y/m/d')?>" class="btn btn-info mt-3">Regresar</a>
-      <a href="index.php?c=alumno&a=editar&id=<?php echo $info['id_alumno']?>" class="btn btn-warning mt-3">Editar información</a>
+      <a href="index.php?c=alumno&a=editar&id=<?php echo $info['id_alumno']?>" class="btn btn-danger mt-3">Eliminar alumno</a> 
+      <a href="index.php?c=alumno&a=editar&id=<?php echo $info['id_alumno']?>" class="btn btn-warning mt-3">Editar alumno</a>
     </div>
   </div>
 </main>
