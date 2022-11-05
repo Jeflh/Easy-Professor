@@ -16,7 +16,6 @@ class AlumnoController{
   }
 
   public function ver(){
-
     $alumno = new AlumnosModel();
     $domicilio = new DomicilioModel();
     $datosAlumno[0] = $alumno->getInfoAlumno();
@@ -30,11 +29,42 @@ class AlumnoController{
     $domicilio = new DomicilioModel();
     
     if(isset($_POST)){
-      $valido = $alumno->validar();
+      $valido = $alumno->validarAlumno();
       if($valido == true){
         $domicilio->insertarDomicilio();
       }
     }
+  }
+
+  public function editar(){
+    $alumno = new AlumnosModel();
+    $domicilio = new DomicilioModel();
+    $datosAlumno[0] = $alumno->getInfoAlumno();
+    $datosAlumno[1] = $domicilio->getDomicilio($_GET['id']);
+    
+    require_once 'views/V_editarAlumno.php';
+
+  }
+
+  public function actualizar(){
+    $alumno = new AlumnosModel();
+    $domicilio = new DomicilioModel();
+    if(isset($_POST)){
+      $valido = $alumno->validarActualizado();
+      if($valido == true){
+        $domicilio->actualizarDomicilio();
+      }
+
+    }
+  }
+
+  public function eliminar(){
+    $alumno = new AlumnosModel();
+    $domicilio = new DomicilioModel();
+    $alumno->eliminarAlumno();
+    $domicilio->eliminarDomicilio();
+    $date =  date('Y/m/d');
+    header("Location: index.php?c=asistencia&f=$date&e=1");
   }
 }
 

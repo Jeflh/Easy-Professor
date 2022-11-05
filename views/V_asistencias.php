@@ -7,8 +7,11 @@ require_once('includes/loggedNav.php');
 <main>
 
   <div class="container d-flex justify-content-between">
+    <div class="col">
+      <a href="index.php?c=panel" class="btn btn-info mt-3">Regresar</a>
+    </div>
     <div>
-      <a href="index.php?c=alumno&a=index"><button type="button" class="btn btn-info mt-2">Añadir alumno</button></a>
+      <a href="index.php?c=alumno&a=index"><button type="button" class="btn btn-primary mt-2">Añadir alumno</button></a>
     </div>
     <div class="col">
       <p class="text-primary text-end me-3 mb-0 lead">
@@ -31,6 +34,12 @@ require_once('includes/loggedNav.php');
         echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
         <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
         <strong>Asistencia guardada</strong>, la asistencia se ha actualizado correctamente.
+        </div>';
+      }
+      if($status == '1'){
+        echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
+        <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+        <strong>Alumno eliminado</strong>, el alumno ha sido borrado correctamente.
         </div>';
       }
     }

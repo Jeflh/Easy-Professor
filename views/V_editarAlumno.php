@@ -1,12 +1,15 @@
 <?php
 require_once('includes/head.php');
 require_once('includes/loggedNav.php');
+
+$info = $datosAlumno[0];
+$domicilio = $datosAlumno[1][0];
 ?>
 
 <main>
   <div class="container d-flex justify-content-between">
     <div class="col">
-      <a href="index.php?c=asistencia&f=<?php echo date('Y/m/d')?>" class="btn btn-info mt-3">Regresar</a>
+      <a href="index.php?c=alumno&a=ver&id=<?php echo $info['id_alumno'];?>" class="btn btn-info mt-3">Regresar</a>
     </div>
     <div class="col">
       <p class="text-primary text-end me-3 mb-0 lead">
@@ -32,7 +35,7 @@ require_once('includes/loggedNav.php');
         case 0:
           echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
-          <strong>Alumno registrado </strong>, el alumno se ha registrado correctamente.
+          <strong>Alumno actualizado </strong>, el alumno se ha actualizado correctamente.
           </div>';
           break;
         case 1:
@@ -133,40 +136,40 @@ require_once('includes/loggedNav.php');
   ?>
 
   <div class="container d-flex justify-content-center mb-3">
-    <form data-bitwarden-watching="1" action="index.php?c=alumno&a=registrar" method="POST">
+    <form data-bitwarden-watching="1" action="index.php?c=alumno&a=actualizar&id=<?php echo $info['id_alumno']?>" method="POST">
       <fieldset>
         <legend class="mt-4 text-center text-primary">
-          <h1><strong>Registro para nuevo alumno</strong></h1>
+          <h1><strong>Editar informaicón de alumno</strong></h1>
         </legend>
         <fieldset class="form-group">
           <legend>Alumno</legend>
           <div class="form-group">
             <label for="nombre" class="form-label mt-1">Nombre(s)</label>
-            <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Ej. Emmanuel" autocomplete="off">
+            <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Ej. Emmanuel" autocomplete="off" value="<?php echo $info['nombre']?>">
           </div>
           <div class="form-group">
             <label for="apellido" class="form-label mt-1">Apellidos</label>
-            <input name="apellido" type="text" class="form-control" id="apellido" placeholder="Ej. Fernández de Lara" autocomplete="off">
+            <input name="apellido" type="text" class="form-control" id="apellido" placeholder="Ej. Fernández de Lara" autocomplete="off" value="<?php echo $info['apellido']?>">
           </div>
           <div class="form-group">
             <label for="sexo" class="form-label mt-1">Sexo</label>
-            <select class="form-select" id="sexo" name="sexo" value=" ">
-              <option disabled selected="selected">-Seleccionar-</option>
-              <option>Masculino</option>
-              <option>Femenino</option>
+            <select class="form-select" id="sexo" name="sexo">
+              <option disabled>-Seleccionar-</option>
+              <option <?php if($info['sexo'] == 'H') echo "selected='selected'"; ?> >Masculino</option>
+              <option <?php if($info['sexo'] == 'M') echo "selected='selected'"; ?> >Femenino</option>
             </select>
           </div>
           <div class="form-group">
             <label for="curp" class="form-label mt-2">CURP</label>
-            <input name="curp" type="text" class="form-control" id="curp" placeholder="Ej. FABM770222MMSJNR00" autocomplete="off" minlength="18" maxlength="18">
+            <input name="curp" type="text" class="form-control" id="curp" placeholder="Ej. FABM770222MMSJNR00" autocomplete="off" minlength="18" maxlength="18" value="<?php echo $info['curp']?>">
           </div>
           <div class="form-group">
             <label for="edad" class="form-label mt-2">Edad</label>
-            <input name="edad" type="number" class="form-control" id="edad" placeholder="Ej. 9" min="5" max="12">
+            <input name="edad" type="number" class="form-control" id="edad" placeholder="Ej. 9" min="5" max="12" value="<?php echo $info['edad']?>">
           </div>
           <div class="form-group">
             <label for="estatura" class="form-label mt-2">Estatura</label>
-            <input name="estatura" type="number" class="form-control" id="estatura" placeholder="Ej. 1.25" min="1.00" max="1.70" step="0.01">
+            <input name="estatura" type="number" class="form-control" id="estatura" placeholder="Ej. 1.25" min="1.00" max="1.70" step="0.01" value="<?php echo $info['estatura']?>">
           </div>
         </fieldset>
 
@@ -174,51 +177,51 @@ require_once('includes/loggedNav.php');
           <legend class="mt-4">Domicilio</legend>
           <div class="form-group">
             <label for="calle" class="form-label mt-1">Calle</label>
-            <input name="calle" type="text" class="form-control" id="calle" placeholder="Ej. Av. Lopez Mateos" autocomplete="off">
+            <input name="calle" type="text" class="form-control" id="calle" placeholder="Ej. Av. Lopez Mateos" autocomplete="off" value="<?php echo $domicilio['calle']?>">
           </div>
           <div class="form-group">
             <label for="numero" class="form-label mt-1">Número</label>
-            <input name="numero" type="number" class="form-control" id="numero" placeholder="Ej. 1684" autocomplete="off">
+            <input name="numero" type="number" class="form-control" id="numero" placeholder="Ej. 1684" autocomplete="off" value="<?php echo $domicilio['numero']?>">
           </div>
           <div class="form-group">
             <label for="colonia" class="form-label mt-1">Colonia</label>
-            <input name="colonia" type="text" class="form-control" id="colonia" placeholder="Ej. Plaza del Sol" autocomplete="off">
+            <input name="colonia" type="text" class="form-control" id="colonia" placeholder="Ej. Plaza del Sol" autocomplete="off" value="<?php echo $domicilio['colonia']?>">
           </div>
           <div class="form-group">
             <label for="cp" class="form-label mt-1">Código postal</label>
-            <input name="cp" type="number" class="form-control" id="cp" placeholder="Ej. 44780">
+            <input name="cp" type="number" class="form-control" id="cp" placeholder="Ej. 44780" value="<?php echo $domicilio['cp']?>">
           </div>
           <div class="form-group">
             <label for="municipio" class="form-label mt-1">Municipio</label>
-            <input name="municipio" type="text" class="form-control" id="municipio" placeholder="Ej. Guadalajara">
+            <input name="municipio" type="text" class="form-control" id="municipio" placeholder="Ej. Guadalajara" value="<?php echo $domicilio['municipio']?>">
           </div>
           <div class="form-group">
             <label for="estado" class="form-label mt-1">Estado</label>
-            <input name="estado" type="text" class="form-control" id="estado" placeholder="Ej. Jalisco">
+            <input name="estado" type="text" class="form-control" id="estado" placeholder="Ej. Jalisco" value="<?php echo $domicilio['estado']?>">
           </div>
         </fieldset>
         <fieldset class="form-group">
           <legend class="mt-4">Información complementaria</legend>
           <div class="form-group">
             <label for="nombre_tutor" class="form-label mt-1">Nombre del tutor</label>
-            <input name="nombre_tutor" type="text" class="form-control" id="nombre_tutor" placeholder="Ej. Emmanuel Fernandez de Lara" autocomplete="off">
+            <input name="nombre_tutor" type="text" class="form-control" id="nombre_tutor" placeholder="Ej. Emmanuel Fernandez de Lara" autocomplete="off" value="<?php echo $info['nombre_tutor']?>">
           </div>
           <div class="form-group">
             <label for="telefono" class="form-label mt-2">Teléfono</label>
-            <input name="telefono" type="number" class="form-control" id="telefono" placeholder="Ej. 321321321" maxlength="10" autocomplete="off">
+            <input name="telefono" type="number" class="form-control" id="telefono" placeholder="Ej. 321321321" maxlength="10" autocomplete="off" value="<?php echo $info['telefono']?>">
           </div>
           <div class="form-group">
             <label for="discapacidad" class="form-label mt-1">Discapacidad</label>
-            <input name="discapacidad" type="text" class="form-control" id="discapacidad" placeholder="Ej. Discapacidad física" autocomplete="off">
+            <input name="discapacidad" type="text" class="form-control" id="discapacidad" placeholder="Ej. Discapacidad física" value="<?php echo $info['discapacidad']?>">
           </div>
           <div class="form-group">
             <label for="observacion" class="form-label mt-4">Observacion</label>
-            <textarea class="form-control" id="observacion" name="observacion" rows="3" data-dl-input-translation="true" placeholder="Ej. Requiere reforzar lectura"></textarea>
+            <textarea class="form-control" id="observacion" name="observacion" rows="3" data-dl-input-translation="true" placeholder="Ej. Requiere reforzar lectura"><?php echo $info['observacion']?></textarea>
             <deepl-inline-translate style="z-index: 1999999999;"></deepl-inline-translate>
           </div>
         </fieldset>
         <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-primary mt-3">Agregar alumno a la lista</button>
+          <button type="submit" class="btn btn-primary mt-3">Actualizar información del alumno</button>
         </div>
       </fieldset>
     </form>
