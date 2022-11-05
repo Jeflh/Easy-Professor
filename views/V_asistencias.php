@@ -5,17 +5,23 @@ require_once('includes/loggedNav.php');
 ?>
 
 <main>
-  <p class="text-primary text-end me-3 mb-0 lead">
-    <?php echo $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'] ?>
-  </p>
 
-  <p class="text-info text-end me-3 mb-0 lead">
-    <?php date_default_timezone_set('America/Mexico_City');
-    echo date("d/m/Y", strtotime($fecha)); ?>
-  </p>
+  <div class="container d-flex justify-content-between">
+    <div>
+      <a href="index.php?c=alumno&a=index"><button type="button" class="btn btn-info mt-2">Añadir alumno</button></a>
+    </div>
+    <div class="col">
+      <p class="text-primary text-end me-3 mb-0 lead">
+        <?php echo $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'] ?>
+      </p>
 
+      <p class="text-info text-end me-3 mb-0 lead">
+        <?php date_default_timezone_set('America/Mexico_City');
+        echo date("d/m/Y", strtotime($fecha)); ?>
+      </p>
+    </div>
+  </div>
   
-
   <?php 
     if (isset($_GET['e'])) {
 
@@ -29,9 +35,8 @@ require_once('includes/loggedNav.php');
       }
     }
   ?>
-<h1 class="text-primary text-center">Lista de asistencia</h1>
+<h1 class="text-primary text-center"><strong>Lista de asistencia</strong></h1>
   <div class="container d-flex justify-content-center">
-
     <div class="col-5">
       <table class="table table-striped table-bordered table-hover table-primary">
         <thead>
@@ -105,7 +110,7 @@ require_once('includes/loggedNav.php');
     </div>
   </div>
 
-
+  
   
 </main>
 

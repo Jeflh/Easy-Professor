@@ -4,16 +4,21 @@ require_once('includes/loggedNav.php');
 ?>
 
 <main>
-  <p class="text-primary text-end me-3 mb-0 lead">
-    <?php echo $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'] ?>
-  </p>
 
-  <p class="text-info text-end me-3 mb-0 lead">
-    <?php date_default_timezone_set('America/Mexico_City');
-    echo date('d/m/Y'); ?>
-  </p>
+  <div class="container d-flex justify-content-between">
+    <div class="col">
+      <p class="text-primary text-end me-3 mb-0 lead">
+        <?php echo $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellido'] ?>
+      </p>
+
+      <p class="text-info text-end me-3 mb-0 lead">
+        <?php date_default_timezone_set('America/Mexico_City');
+        echo date('d/m/Y'); ?>
+      </p>
+    </div>
+  </div>
   
-  <h1 class="text-primary text-center">Panel de control</h1>
+  <h1 class="text-primary text-center"><strong>Panel de control</strong></h1>
 
   <div class="container">
     <div class="d-flex justify-content-center">
