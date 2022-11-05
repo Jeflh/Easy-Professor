@@ -5,6 +5,7 @@ class AlumnoController{
   public function __construct(){
     require_once 'models/M_alumno.php';
     require_once 'models/M_domicilio.php';
+    require_once 'models/M_asistencia.php';
     
     $auth = autenticado();
     if ($auth == false) {
@@ -61,7 +62,10 @@ class AlumnoController{
   public function eliminar(){
     $alumno = new AlumnosModel();
     $domicilio = new DomicilioModel();
+    $asistencia = new AsistenciaModel();
+
     $alumno->eliminarAlumno();
+    $asistencia->eliminarAsistencias();
     $domicilio->eliminarDomicilio();
     $date =  date('Y/m/d');
     header("Location: index.php?c=asistencia&f=$date&e=1");

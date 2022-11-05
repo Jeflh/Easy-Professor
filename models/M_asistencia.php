@@ -46,6 +46,10 @@ class AsistenciaModel{
     }
   }
 
+  public function eliminarAsistencias(){
+    $id= $_GET['id'];
+    $query = $this->db->query("DELETE FROM asistencias WHERE id_alumno = '$id'");
+  }
 }
-
+1
 ?>
