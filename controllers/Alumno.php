@@ -13,7 +13,7 @@ class AlumnoController{
     }
   }
   public function index(){
-    require_once 'views/V_nuevoAlumno.php';
+    require_once 'views/alumno/V_nuevoAlumno.php';
   }
 
   public function ver(){
@@ -22,7 +22,7 @@ class AlumnoController{
     $datosAlumno[0] = $alumno->getInfoAlumno();
     $datosAlumno[1] = $domicilio->getDomicilio($_GET['id']);
       
-    require_once 'views/V_alumno.php';
+    require_once 'views/alumno/V_alumno.php';
   }
 
   public function registrar(){
@@ -43,7 +43,7 @@ class AlumnoController{
     $datosAlumno[0] = $alumno->getInfoAlumno();
     $datosAlumno[1] = $domicilio->getDomicilio($_GET['id']);
     
-    require_once 'views/V_editarAlumno.php';
+    require_once 'views/alumno/V_editarAlumno.php';
 
   }
 

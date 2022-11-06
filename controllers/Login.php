@@ -7,7 +7,7 @@ class LoginController{
   }
   
   public function index() {
-    require_once 'views/V_login.php';
+    require_once 'views/inicio/V_login.php';
   }
 
   public function validar(){

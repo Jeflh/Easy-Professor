@@ -7,7 +7,7 @@ class RegistroController {
   }
   
   public function index() {
-    require_once 'views/V_registro.php';
+    require_once 'views/inicio/V_registro.php';
   }
 
   public function validar() {

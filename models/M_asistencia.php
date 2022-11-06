@@ -51,5 +51,5 @@ class AsistenciaModel{
     $query = $this->db->query("DELETE FROM asistencias WHERE id_alumno = '$id'");
   }
 }
-1
+
 ?>

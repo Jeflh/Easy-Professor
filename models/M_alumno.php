@@ -78,6 +78,9 @@ class AlumnosModel{
     if(empty($this->telefono) || strlen($this->telefono) != 10) {
       $error .= '8';  // El teléfono es requerido
     }
+    if($this->validarExistencia($this->curp)) {
+      $error .= '9';  // El alumno ya existe
+    }
     
     if(empty($estado) || is_numeric($estado)) {
       $error .= 'a';  // El estado es requerido
@@ -117,8 +120,6 @@ class AlumnosModel{
       }
       $query = $this->db->query("INSERT INTO alumnos (id_usuario, nombre, apellido, sexo, curp, edad, estatura, nombre_tutor, telefono, discapacidad, observacion) VALUES ('$this->id_usuario', '$this->nombre', '$this->apellido', '$this->sexo', '$this->curp', '$this->edad', '$this->estatura', '$this->nombre_tutor', '$this->telefono', '$this->discapacidad', '$this->observacion')"); 
 
-    } else {
-      header("Location: index.php?c=alumno&a=index&e=9");
     }
   }
 

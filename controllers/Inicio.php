@@ -3,7 +3,7 @@
 class InicioController {
   
   public function index() {
-    require_once 'views/V_inicio.php';
+    require_once 'views/inicio/V_inicio.php';
   }
 }
 
