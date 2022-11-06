@@ -37,7 +37,7 @@ class AsistenciaController
         $lista['asistencias'] = $listaAsistencia->getDia($fecha);
       }
 
-      require_once 'views/V_asistencias.php'; // Si el usuario está autenticado
+      require_once 'views/asistencias/V_asistencias.php'; // Si el usuario está autenticado
 
     } else {
       header('Location: index.php?c=login'); // Si no está autenticado se va al login
