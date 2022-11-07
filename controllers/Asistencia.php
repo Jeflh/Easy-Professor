@@ -58,6 +58,7 @@ class AsistenciaController
             'asistencia' => 0
           );
           $asistencia->setDia($asistenciasIniciales[$i]);
+          $this->guardar();
         }
       }else {
         for($i = 0; $i < count($this->listaInterna['alumnos']); $i++){
