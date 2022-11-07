@@ -9,7 +9,9 @@ $domicilio = $datosAlumno[1][0];
 <main>
   <div class="container d-flex justify-content-between">
     <div class="col">
-      <a href="index.php?c=alumno&a=ver&id=<?php echo $info['id_alumno'];?>" class="btn btn-info mt-3">Regresar</a>
+      <a href="index.php?c=alumno&a=ver&id=<?php echo $info['id_alumno'];?>" class="btn btn-info mt-3"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+        </svg></a>
     </div>
     <div class="col">
       <p class="text-primary text-end me-3 mb-0 lead">
@@ -193,11 +195,11 @@ $domicilio = $datosAlumno[1][0];
           </div>
           <div class="form-group">
             <label for="municipio" class="form-label mt-1">Municipio</label>
-            <input name="municipio" type="text" class="form-control" id="municipio" placeholder="Ej. Guadalajara" value="<?php echo $domicilio['municipio']?>">
+            <input name="municipio" type="text" class="form-control" id="municipio" placeholder="Ej. Guadalajara" value="<?php echo $domicilio['municipio']?>" autocomplete="off">
           </div>
           <div class="form-group">
             <label for="estado" class="form-label mt-1">Estado</label>
-            <input name="estado" type="text" class="form-control" id="estado" placeholder="Ej. Jalisco" value="<?php echo $domicilio['estado']?>">
+            <input name="estado" type="text" class="form-control" id="estado" placeholder="Ej. Jalisco" value="<?php echo $domicilio['estado']?>" autocomplete="off">
           </div>
         </fieldset>
         <fieldset class="form-group">
@@ -212,7 +214,7 @@ $domicilio = $datosAlumno[1][0];
           </div>
           <div class="form-group">
             <label for="discapacidad" class="form-label mt-1">Discapacidad</label>
-            <input name="discapacidad" type="text" class="form-control" id="discapacidad" placeholder="Ej. Discapacidad física" value="<?php echo $info['discapacidad']?>">
+            <input name="discapacidad" type="text" class="form-control" id="discapacidad" placeholder="Ej. Discapacidad física" value="<?php echo $info['discapacidad']?>" autocomplete="off">
           </div>
           <div class="form-group">
             <label for="observacion" class="form-label mt-4">Observacion</label>
