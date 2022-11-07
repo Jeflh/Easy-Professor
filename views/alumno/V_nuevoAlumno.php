@@ -192,11 +192,11 @@ require_once('includes/loggedNav.php');
           </div>
           <div class="form-group">
             <label for="municipio" class="form-label mt-1">Municipio</label>
-            <input name="municipio" type="text" class="form-control" id="municipio" placeholder="Ej. Guadalajara">
+            <input name="municipio" type="text" class="form-control" id="municipio" placeholder="Ej. Guadalajara" autocomplete="off">
           </div>
           <div class="form-group">
             <label for="estado" class="form-label mt-1">Estado</label>
-            <input name="estado" type="text" class="form-control" id="estado" placeholder="Ej. Jalisco">
+            <input name="estado" type="text" class="form-control" id="estado" placeholder="Ej. Jalisco" autocomplete="off">
           </div>
         </fieldset>
         <fieldset class="form-group">
