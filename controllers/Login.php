@@ -31,19 +31,23 @@ class LoginController{
         // Consulta el usuario en la base de datos
         
         $usuario = $consulta->getUsuario();
-        
+        if(isset($usuario['correo'])){
+          $auth = $usuario['correo'] == $correo;
+        } else {
+          $error = '1'; // "El correo o la contraseña son incorrectos";
+          header("Location: index.php?c=login&e=$error");
+        }
+
         if(isset($usuario['password'])){
           $auth = password_verify($password, $usuario['password']); // Verifica la contraseña
         }
 
         if($auth){
-
           // Iniciar sesion
           session_start();
           $_SESSION['usuario'] = $usuario; // Guardar datos del usuario en la sesión
           $_SESSION['login'] = true;
 
-          echo "true";
           header('Location: index.php?c=panel');
 
         } else {
@@ -61,8 +65,6 @@ class LoginController{
     session_start();
 
     $_SESSION = [];
-
-    echo "Sesion cerrada";
 
     header('Location: index.php');
   }
