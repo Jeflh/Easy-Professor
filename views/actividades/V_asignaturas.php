@@ -33,7 +33,7 @@ require_once('includes/loggedNav.php');
           <h4 class=""><?php echo $asignatura['nombre_asignatura']; ?></h4>
         </div>
         <div class="card-body">
-          <a href="index.php?c=actividades&id=<?php echo $asignatura['id_asignatura']; ?>" class="link-light">
+          <a href="index.php?c=actividad&id=<?php echo $asignatura['id_asignatura']; ?>" class="link-light">
             <?php
             if ($i % 2 == 0) {
               echo '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">

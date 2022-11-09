@@ -71,8 +71,8 @@ $domicilio = $datosAlumno[1][0];
     </div>
 
     <div class="d-flex justify-content-between mb-3">
-      <a href="index.php?c=alumno&a=eliminar&id=<?php echo $info['id_alumno']?>" class="btn btn-danger mt-3">Eliminar alumno</a> 
       <a href="index.php?c=alumno&a=editar&id=<?php echo $info['id_alumno']?>" class="btn btn-warning mt-3">Editar alumno</a>
+      <a href="index.php?c=alumno&a=eliminar&id=<?php echo $info['id_alumno']?>" class="btn btn-danger mt-3">Eliminar alumno</a> 
     </div>
   </div>
 </main>
