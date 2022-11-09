@@ -105,7 +105,7 @@ class AlumnosModel{
       $this->insertarAlumno();
       return true;
     } else {
-      header("Location: index.php?c=alumno&a=index&e=$error");
+      header("Location: index.php?c=alumno&e=$error");
       return false;
     }
   }
