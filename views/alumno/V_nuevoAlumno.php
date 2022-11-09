@@ -28,102 +28,101 @@ require_once('includes/loggedNav.php');
     $status = $_GET['e'];
     $arrayValues = str_split($status);
     // Se convierte el string en un array para poder evaluar cada caso.
-  
     for ($i = 0; $i < count($arrayValues); $i++) {
       switch ($arrayValues[$i]) { // Se evalua cada caso y muestra la alerata correspondiente
-        case 0:
+        case "0":
           echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Alumno registrado </strong>, el alumno se ha registrado correctamente.
           </div>';
           break;
-        case 1:
+        case "1":
           echo '<div class="text-center alert alert-dismissible alert-danger mt-1 mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Nombre no válido </strong>, por favor introduce un nombre válido.
           </div>';
           break;
-        case 2:
+        case "2":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Apellido no válido </strong>, por favor introduce un apellido válido.
           </div>';
           break;
-        case 3:
+        case "3":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Sexo no válido </strong>, por favor elige un sexo válido.
           </div>';
           break;
-        case 4:
+        case "4":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>CURP no válida </strong>, por favor introduce una CURP válida.
           </div>';
           break;
-        case 5:
+        case "5":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Edad no válida </strong>, la edad es requerida.
           </div>';
           break;
-        case 6:
+        case "6":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Estatura no válida</strong>, la estatura es requerida.
           </div>';
           break;
-        case 7:
+        case "7":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Nombre de tutor no válido</strong>, por favor introduce un nombre de tutor válido.
           </div>';
           break;
-        case 8:
+        case "8":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Teléfono no válido </strong>, por favor introduce un teléfono válido.
           </div>';
           break;
-        case 9:
+        case "9":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>CURP no válida </strong>, el alumno ya se encuentra registrado.
           </div>';
           break;
-        case 'a':
+        case "a":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Estado no válido</strong>, por favor introduce un estado válido.
           </div>';
           break;
   
-        case 'b':
+        case "b":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Municipio no válido </strong>, por favor introduce un municipio válido.
           </div>';
           break;
-        case 'c':
+        case "c":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Calle no válida </strong>, por favor introduce una calle válida.
           </div>';
           break;
-        case 'd':
+        case "d":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Número no válido </strong>, por favor introduce un número válido.
           </div>';
           break;
-        case 'e':
+        case "e":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Colonia no válida </strong>, por favor introduce una colonia válida.
           </div>';
           break;
   
-        case 'f':
+        case "f":
           echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
           <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
           <strong>Código postal no válido</strong>, por favor introduce un código postal válido.
