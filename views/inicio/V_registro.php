@@ -92,13 +92,13 @@ if (isset($_GET['e'])) {
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="privacidad" required>
             <label class="form-check-label" for="flexCheckDefault">
-              He leído y estoy de acuerdo con la <a href="">politica de privacidad</a>.
+              He leído y estoy de acuerdo con la <a href="index.php?c=registro&a=privacidad" target="_blank">politica de privacidad</a>.
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="terminos" required>
             <label class="form-check-label" for="flexCheckDefault">
-              Acepto los <a href="">terminos y condiciones de uso</a>.
+              Acepto los <a href="index.php?c=registro&a=terminos" target="_blan">terminos y condiciones de uso</a>.
             </label>
           </div>
         </fieldset>

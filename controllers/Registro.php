@@ -10,6 +10,14 @@ class RegistroController {
     require_once 'views/inicio/V_registro.php';
   }
 
+  public function privacidad(){
+    require_once 'views/inicio/V_privacidad.php';
+  }
+
+  public function terminos(){
+    require_once 'views/inicio/V_terminos.php';
+  }
+
   public function validar() {
 
     if(isset($_POST)){
