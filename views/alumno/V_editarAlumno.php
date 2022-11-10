@@ -199,7 +199,41 @@ $domicilio = $datosAlumno[1][0];
           </div>
           <div class="form-group">
             <label for="estado" class="form-label mt-1">Estado</label>
-            <input name="estado" type="text" class="form-control" id="estado" placeholder="Ej. Jalisco" value="<?php echo $domicilio['estado']?>" autocomplete="off">
+            <select class="form-select" id="estado" name="estado" value=" ">
+              <option disabled selected="selected">-Seleccionar-</option>
+              <option <?php if($domicilio['estado'] == 'Aguascalientes') echo "selected='selected'"; ?> >Aguascalientes</option>
+              <option <?php if($domicilio['estado'] == 'Baja California') echo "selected='selected'"; ?> >Baja California</option>
+              <option <?php if($domicilio['estado'] == 'Baja California Sur') echo "selected='selected'"; ?> >Baja California Sur</option>
+              <option <?php if($domicilio['estado'] == 'Campeche') echo "selected='selected'"; ?> >Campeche</option>
+              <option <?php if($domicilio['estado'] == 'Chiapas') echo "selected='selected'"; ?> >Chiapas</option>
+              <option <?php if($domicilio['estado'] == 'Chihuahua') echo "selected='selected'"; ?> >Chihuahua</option>
+              <option <?php if($domicilio['estado'] == 'Ciudad de México') echo "selected='selected'"; ?> >Ciudad de México</option>
+              <option <?php if($domicilio['estado'] == 'Coahuila') echo "selected='selected'"; ?> >Coahuila</option>
+              <option <?php if($domicilio['estado'] == 'Colima') echo "selected='selected'"; ?> >Colima</option>
+              <option <?php if($domicilio['estado'] == 'Durango') echo "selected='selected'"; ?> >Durango</option>
+              <option <?php if($domicilio['estado'] == 'Guanajuato') echo "selected='selected'"; ?> >Guanajuato</option>
+              <option <?php if($domicilio['estado'] == 'Guerrero') echo "selected='selected'"; ?> >Guerrero</option>
+              <option <?php if($domicilio['estado'] == 'Hidalgo') echo "selected='selected'"; ?> >Hidalgo</option>
+              <option <?php if($domicilio['estado'] == 'Jalisco') echo "selected='selected'"; ?> >Jalisco</option>
+              <option <?php if($domicilio['estado'] == 'México') echo "selected='selected'"; ?> >México</option>
+              <option <?php if($domicilio['estado'] == 'Michoacán') echo "selected='selected'"; ?> >Michoacán</option>
+              <option <?php if($domicilio['estado'] == 'Morelos') echo "selected='selected'"; ?> >Morelos</option>
+              <option <?php if($domicilio['estado'] == 'Nayarit') echo "selected='selected'"; ?> >Nayarit</option>
+              <option <?php if($domicilio['estado'] == 'Nuevo León') echo "selected='selected'"; ?> >Nuevo León</option>
+              <option <?php if($domicilio['estado'] == 'Oaxaca') echo "selected='selected'"; ?> >Oaxaca</option>
+              <option <?php if($domicilio['estado'] == 'Puebla') echo "selected='selected'"; ?> >Puebla</option>
+              <option <?php if($domicilio['estado'] == 'Querétaro') echo "selected='selected'"; ?> >Querétaro</option>
+              <option <?php if($domicilio['estado'] == 'Quintana Roo') echo "selected='selected'"; ?> >Quintana Roo</option>
+              <option <?php if($domicilio['estado'] == 'San Luis Potosí') echo "selected='selected'"; ?> >San Luis Potosí</option>
+              <option <?php if($domicilio['estado'] == 'Sinaloa') echo "selected='selected'"; ?> >Sinaloa</option>
+              <option <?php if($domicilio['estado'] == 'Sonora') echo "selected='selected'"; ?> >Sonora</option>
+              <option <?php if($domicilio['estado'] == 'Tabasco') echo "selected='selected'"; ?> >Tabasco</option>
+              <option <?php if($domicilio['estado'] == 'Tamaulipas') echo "selected='selected'"; ?> >Tamaulipas</option>
+              <option <?php if($domicilio['estado'] == 'Tlaxcala') echo "selected='selected'"; ?> >Tlaxcala</option>
+              <option <?php if($domicilio['estado'] == 'Veracruz') echo "selected='selected'"; ?> >Veracruz</option>
+              <option <?php if($domicilio['estado'] == 'Yucatán') echo "selected='selected'"; ?> >Yucatán</option>
+              <option <?php if($domicilio['estado'] == 'Zacatecas') echo "selected='selected'"; ?> >Zacatecas</option>            
+            </select>
           </div>
         </fieldset>
         <fieldset class="form-group">
