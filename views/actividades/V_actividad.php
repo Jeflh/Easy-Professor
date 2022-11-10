@@ -1,6 +1,6 @@
 <?php 
   require_once('includes/head.php');
-  require_once('includes/noLoggedNav.php'); 
+  require_once('includes/loggedNav.php');
 ?>
 
 <main>

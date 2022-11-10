@@ -31,8 +31,16 @@ class ActividadController{
     }
   }
 
-  public function insertar(){
+  public function nueva(){
+    if(isset($_POST)){
+      $actividad = new ActividadModel();
+      require_once 'views/actividades/V_nuevaActividad.php';
+    }
+  }
+
+  public function crear(){
     $actividad = new ActividadModel();
+    
     if(isset($_POST)){
       $actividad->insertarActividad();
     }

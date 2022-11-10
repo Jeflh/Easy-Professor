@@ -15,7 +15,7 @@ require_once('includes/loggedNav.php');
       </a>
     </div>
     <div>
-      <a href="index.php?c=actividades&a=crear"><button type="button" class="btn btn-primary mt-2">Nueva actividad</button></a>
+      <a href="index.php?c=actividad&a=nueva"><button type="button" class="btn btn-primary mt-2">Nueva actividad</button></a>
     </div>
     <div class="col">
       <p class="text-primary text-end me-3 mb-0 lead">
@@ -39,13 +39,25 @@ require_once('includes/loggedNav.php');
           <div class=" card bg-light mt-2 mb-2 me-1 w-50">
             <div class="card-body">
               <a href="index.php?c=actividades&a=ver&id=<?php echo $actividad['id_actividad']; ?>">
-                <h5 class="card-title"><?php echo $actividad['nombre_act'] ?></h5>
+                <h5 class="card-title mb-1"><?php echo $actividad['nombre_act'] ?></h5>
               </a>
-              <h6 class="card-subtitle mb-2 text-muted"><?php echo $actividad['fecha_actividad'] ?></h6>
+              <span class=" card-subtitle badge bg-primary mb-2"> <?php  
+                  if($actividad['tipo'] == 1){
+                    echo 'Trabajo';
+                  } else if ($actividad['tipo'] == 2){
+                    echo 'Tarea';
+                  } else if ($actividad['tipo'] == 3){
+                    echo 'Examen';
+                  }
+              ?></span>
+              <span class="badge bg-dark card-subtitle mb-2">
+                <?php echo $actividad['fecha_actividad']; ?>
+              </span>
+              
               <p class="card-text mb-0"><?php echo $actividad['descripcion'] ?></p>
               <div class="d-flex justify-content-between ">
-                <a href="index.php?c=actividades&a=editar&id=<?php echo $actividad['id_actividad'] ?>" class="btn btn-warning mt-3">Editar</a>
-                <a href="index.php?c=actividades&a=eliminar&id=<?php echo $actividad['id_actividad'] ?>" class="btn btn-danger mt-3">Eliminar</a>
+                <a href="index.php?c=actividades&a=editar&id=<?php echo $actividad['id_actividad'] ?>" class="btn btn-warning mt-2">Editar</a>
+                <a href="index.php?c=actividades&a=eliminar&id=<?php echo $actividad['id_actividad'] ?>" class="btn btn-danger mt-2">Eliminar</a>
               </div>
             </div>
           </div>
