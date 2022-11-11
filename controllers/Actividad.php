@@ -3,13 +3,19 @@
 class ActividadController{
 
   public function __construct(){
+    require_once 'models/M_alumno.php';
     require_once 'models/M_asignatura.php';
     require_once 'models/M_actividad.php';
+    require_once 'models/M_calificacion.php';
     
     $auth = autenticado();
     if ($auth == false) {
       header('Location: index.php?c=login');
     }
+
+    $alumnos = new AlumnoModel();
+    $this->listaInterna['alumnos'] = $alumnos->getAlumnos();
+    
   }
 
   public function index(){
@@ -21,15 +27,6 @@ class ActividadController{
     $datos['actividades'] = $actividades->getActividades();
     
     require_once 'views/actividades/V_actividades.php';
-  }
-
-  public function ver(){
-    if(isset($_GET)){
-      $id = $_GET['id'];
-      $actividad = new ActividadModel();
-      $datos['actividad'] = $actividad->getActividad($id);
-      require_once 'views/actividades/V_actividad.php';
-    }
   }
 
   public function nueva(){

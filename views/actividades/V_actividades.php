@@ -65,7 +65,7 @@ if (isset($_GET['e'])) {
         foreach ($datos['actividades'] as $actividad) : ?>
           <div class=" card bg-light mt-2 mb-2 me-1 w-50">
             <div class="card-body">
-              <a href="index.php?c=actividad&a=ver&id=<?php echo $actividad['id_actividad']; ?>">
+              <a href="index.php?c=calificar&id=<?php echo $actividad['id_actividad']; ?>">
                 <h5 class="card-title mb-1"><?php echo $actividad['nombre_act'] ?></h5>
               </a>
               <span class=" card-subtitle badge bg-primary mb-2"> <?php  

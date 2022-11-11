@@ -1,6 +1,7 @@
 <?php
 require_once('includes/head.php');
 require_once('includes/loggedNav.php');
+date_default_timezone_set('America/Mexico_City');
 
 $fecha =  date('Y-m-d');
 
