@@ -12,7 +12,7 @@ class AsistenciaController
     $this->auth = autenticado();
 
     if ($this->auth) {  // Si el usuario está autenticado se genera la lista de alumnos 
-      $alumnos = new AlumnosModel();
+      $alumnos = new AlumnoModel();
       $this->listaInterna['alumnos'] = $alumnos->getAlumnos();
       // La lista se almacena para la misma clase, aunque esta será compartida con la vista en la función index(), se hace para no hacer dos consultas a la base de datos.
 

@@ -17,7 +17,7 @@ class AlumnoController{
   }
 
   public function ver(){
-    $alumno = new AlumnosModel();
+    $alumno = new AlumnoModel();
     $domicilio = new DomicilioModel();
     $datosAlumno[0] = $alumno->getInfoAlumno();
     $datosAlumno[1] = $domicilio->getDomicilio($_GET['id']);
@@ -26,7 +26,7 @@ class AlumnoController{
   }
 
   public function registrar(){
-    $alumno = new AlumnosModel();
+    $alumno = new AlumnoModel();
     $domicilio = new DomicilioModel();
     
     if(isset($_POST)){
@@ -39,7 +39,7 @@ class AlumnoController{
   }
 
   public function editar(){
-    $alumno = new AlumnosModel();
+    $alumno = new AlumnoModel();
     $domicilio = new DomicilioModel();
     $datosAlumno[0] = $alumno->getInfoAlumno();
     $datosAlumno[1] = $domicilio->getDomicilio($_GET['id']);
@@ -49,7 +49,7 @@ class AlumnoController{
   }
 
   public function actualizar(){
-    $alumno = new AlumnosModel();
+    $alumno = new AlumnoModel();
     $domicilio = new DomicilioModel();
     if(isset($_POST)){
       $valido = $alumno->validarActualizado();
@@ -62,7 +62,7 @@ class AlumnoController{
   }
 
   public function eliminar(){
-    $alumno = new AlumnosModel();
+    $alumno = new AlumnoModel();
     $domicilio = new DomicilioModel();
     $asistencia = new AsistenciaModel();
 

@@ -1,7 +1,7 @@
 <?php
 
 
-class AlumnosModel{
+class AlumnoModel{
   private $db;
   private $infoAlumno;
   private $alumnos;

@@ -1,6 +1,6 @@
 <?php
 
-class DomicilioModel extends AlumnosModel{
+class DomicilioModel extends AlumnoModel{
   private $db;
   private $domicilio;
 
@@ -18,7 +18,7 @@ class DomicilioModel extends AlumnosModel{
 
 
   public function insertarDomicilio(){
-    $alumno = new AlumnosModel();
+    $alumno = new AlumnoModel();
     $alumno = $alumno->validarExistencia($_POST['curp']);
 
     $this->id_alumno = $alumno['id_alumno'];
@@ -35,7 +35,7 @@ class DomicilioModel extends AlumnosModel{
   }
 
   public function actualizarDomicilio(){
-    $alumno = new AlumnosModel();
+    $alumno = new AlumnoModel();
     $alumno = $alumno->validarExistencia($_POST['curp']);
 
     $this->id_alumno = $alumno['id_alumno'];
