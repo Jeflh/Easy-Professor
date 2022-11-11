@@ -1,7 +1,34 @@
 <?php
 require_once('includes/head.php');
 require_once('includes/loggedNav.php');
+if (isset($_GET['e'])) {
 
+  $status = $_GET['e'];
+  $arrayValues = str_split($status);
+  // Se convierte el string en un array para poder evaluar cada caso.
+  for ($i = 0; $i < count($arrayValues); $i++) {
+    switch ($arrayValues[$i]) { // Se evalua cada caso y muestra la alerata correspondiente
+      case "0":
+        echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
+        <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+        <strong>Actividad añadida </strong>, la actividad se ha registrado correctamente.
+        </div>';
+        break;
+      case "1":
+        echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
+        <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+        <strong>Actividad actualizada</strong>, la actividad se ha actualizado correctamente.
+        </div>';
+        break;
+      case "2":
+        echo '<div class="text-center alert alert-dismissible alert-success mb-1">
+        <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+        <strong>Actividad eliminada</strong>, la actividad se ha eliminado correctamente.
+        </div>';
+        break;
+    }
+  }
+}
 ?>
 
 <main>
@@ -15,7 +42,7 @@ require_once('includes/loggedNav.php');
       </a>
     </div>
     <div>
-      <a href="index.php?c=actividad&a=nueva"><button type="button" class="btn btn-primary mt-2">Nueva actividad</button></a>
+      <a href="index.php?c=actividad&a=nueva&id=<?php echo $materia['materia']['id_asignatura'] ?>"><button type="button" class="btn btn-primary mt-2">Nueva actividad</button></a>
     </div>
     <div class="col">
       <p class="text-primary text-end me-3 mb-0 lead">
@@ -29,7 +56,7 @@ require_once('includes/loggedNav.php');
     </div>
   </div>
 
-  <h1 class="text-primary text-center"><strong>Actividades de <?php echo $materia['materia'] ?></strong></h1>
+  <h1 class="text-primary text-center"><strong>Actividades de <?php echo $materia['materia']['nombre_asignatura']; ?></strong></h1>
   <div class="container d-flex flex-wrap justify-content-center">
     <?php 
       if($datos['actividades'] == null){
@@ -56,8 +83,8 @@ require_once('includes/loggedNav.php');
               
               <p class="card-text mb-0"><?php echo $actividad['descripcion'] ?></p>
               <div class="d-flex justify-content-between ">
-                <a href="index.php?c=actividades&a=editar&id=<?php echo $actividad['id_actividad'] ?>" class="btn btn-warning mt-2">Editar</a>
-                <a href="index.php?c=actividades&a=eliminar&id=<?php echo $actividad['id_actividad'] ?>" class="btn btn-danger mt-2">Eliminar</a>
+                <a href="index.php?c=actividad&a=editar&id=<?php echo $materia['materia']['id_asignatura'] . '&f=' . $actividad['id_actividad']?>" class="btn btn-warning mt-2">Editar</a>
+                <a href="index.php?c=actividad&a=eliminar&id=<?php echo $materia['materia']['id_asignatura'] . '&f=' . $actividad['id_actividad']?>" class="btn btn-danger mt-2">Eliminar</a>
               </div>
             </div>
           </div>

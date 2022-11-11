@@ -15,6 +15,7 @@ class ActividadController{
   public function index(){
     $asignatura = new AsignaturaModel();
     $materia['materia'] = $asignatura->getAsignatura();
+    $this->asignatura = $materia['materia']['id_asignatura'];
 
     $actividades = new ActividadModel();
     $datos['actividades'] = $actividades->getActividades();
@@ -33,7 +34,6 @@ class ActividadController{
 
   public function nueva(){
     if(isset($_POST)){
-      $actividad = new ActividadModel();
       require_once 'views/actividades/V_nuevaActividad.php';
     }
   }
@@ -42,25 +42,35 @@ class ActividadController{
     $actividad = new ActividadModel();
     
     if(isset($_POST)){
-      $actividad->insertarActividad();
+      if($actividad->insertarActividad()){
+        header('Location: index.php?c=actividad&id=' . $_POST['asignatura'] . '&e=0' );
+      }  
     }
-
-    header('Location: index.php?c=actividades');
   }
 
   public function editar(){
     $actividad = new ActividadModel();
-    $datos['actividad'] = $actividad->getActividad($_GET['id']);
+    $datos['actividad'] = $actividad->getActividad($_GET['f']);
 
     require_once 'views/actividades/V_editarActividad.php';
   }
 
+  public function actualizar(){
+    $actividad = new ActividadModel();
+
+    if($actividad->updateActividad()){
+      header('Location: index.php?c=actividad&id=' . $_POST['asignatura'] . '&e=1' );
+      
+    }
+  }
+
   public function eliminar(){
     if(isset($_GET)){
-      $id = $_GET['id'];
+
       $actividad = new ActividadModel();
-      $actividad->eliminarActividad($id);
-      
+      $actividad->eliminarActividad($_GET['f']);
+
+      header('Location: index.php?c=actividad&id='. $_GET['id'] . '&e=2' );
     }
   }
 }

@@ -23,9 +23,9 @@ class AsignaturaModel{
   public function getAsignatura(){
     if(isset($_GET)){
       $id = $_GET['id'];
-      $query = $this->db->query("SELECT nombre_asignatura FROM asignaturas WHERE id_asignatura = '$id'");
+      $query = $this->db->query("SELECT * FROM asignaturas WHERE id_asignatura = '$id'");
       $row = $query->fetch_assoc();
-      return $row['nombre_asignatura'];
+      return $row;
     }
   }
 }
