@@ -39,6 +39,13 @@ require_once('includes/loggedNav.php');
         </div>';
     }
     if ($status == '1') {
+        echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
+        <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+        <strong>Alumno registrado </strong>, el alumno se ha registrado correctamente.
+        </div>';
+    }
+
+    if ($status == '2') {
       echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
         <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
         <strong>Alumno eliminado</strong>, el alumno ha sido borrado correctamente.

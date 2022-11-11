@@ -33,6 +33,7 @@ class AlumnoController{
       $valido = $alumno->validarAlumno();
       if($valido == true){
         $domicilio->insertarDomicilio();
+        header('Location: index.php?c=asistencia&f=' . date('Y-m-d') . '&e=1');
       }
     }
   }
@@ -54,6 +55,7 @@ class AlumnoController{
       $valido = $alumno->validarActualizado();
       if($valido == true){
         $domicilio->actualizarDomicilio();
+        header('Location: index.php?c=alumno&a=ver&id=' . $_GET['id'] . '&e=0');
       }
 
     }
@@ -67,8 +69,7 @@ class AlumnoController{
     $alumno->eliminarAlumno();
     $asistencia->eliminarAsistencias();
     $domicilio->eliminarDomicilio();
-    $date =  date('Y/m/d');
-    header("Location: index.php?c=asistencia&f=$date&e=1");
+    header("Location: index.php?c=asistencia&f=" . date('Y/m/d') ."&e=2");
   }
 }
 

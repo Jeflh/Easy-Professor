@@ -8,7 +8,17 @@ require_once('includes/loggedNav.php');
 */
 $info = $datosAlumno[0];
 $domicilio = $datosAlumno[1][0];
+if (isset($_GET['e'])) {
 
+  $status = $_GET['e'];
+
+  if ($status == '0') {
+    echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
+      <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+      <strong>Alumno actualizado</strong>, la información del alumno se ha actualizado correctamente.
+      </div>';
+  }
+}
 ?>
 
 <main>
