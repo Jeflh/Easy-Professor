@@ -6,6 +6,7 @@ class AlumnoController{
     require_once 'models/M_alumno.php';
     require_once 'models/M_domicilio.php';
     require_once 'models/M_asistencia.php';
+    require_once 'models/M_calificacion.php';
     
     $auth = autenticado();
     if ($auth == false) {
@@ -65,10 +66,13 @@ class AlumnoController{
     $alumno = new AlumnoModel();
     $domicilio = new DomicilioModel();
     $asistencia = new AsistenciaModel();
+    $calificacion = new CalificacionModel();
 
     $alumno->eliminarAlumno();
     $asistencia->eliminarAsistencias();
     $domicilio->eliminarDomicilio();
+    $calificacion->eliminarCal();
+
     header("Location: index.php?c=asistencia&f=" . date('Y/m/d') ."&e=2");
   }
 }
