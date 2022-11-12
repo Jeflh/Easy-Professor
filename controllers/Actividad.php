@@ -65,7 +65,9 @@ class ActividadController{
     if(isset($_GET)){
 
       $actividad = new ActividadModel();
+      $calificacion = new CalificacionModel();
       $actividad->eliminarActividad($_GET['f']);
+      $calificacion->eliminarTodas($_GET['f']);
 
       header('Location: index.php?c=actividad&id='. $_GET['id'] . '&e=2' );
     }

@@ -5,6 +5,11 @@
   $lista['alumno'] = $listaAlumnos['alumnos'];
   $lista['calificacion'] = $listaAlumnos['calificaciones'];
   
+  foreach ($lista['calificacion'] as $calificacion){
+    $listaCal[] = $calificacion['id_alumno'];
+  }
+
+
 ?>
 
 <main>
@@ -25,6 +30,21 @@
       </p>
     </div>
   </div>
+
+  <?php
+  if (isset($_GET['e'])) {
+
+    $status = $_GET['e'];
+
+    if ($status == '0') {
+      echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
+        <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+        <strong>Calificaciones guardadas</strong>, las calificaciones se han actualizado correctamente.
+        </div>';
+    }
+  }
+  ?>
+
   <h1 class="text-primary text-center"><strong>Calificaciones</strong></h1>
   <h3 class="text-primary text-center"> <?php echo $datos['actividad']['nombre_act']; ?> </h3>
   <div class="container d-flex justify-content-center">
@@ -70,7 +90,7 @@
                   <?php if($lista['calificacion']): //Si hay calificaciones las recupera e imprime ?>
                     <?php foreach ($lista['calificacion'] as $calificacion): ?>
                       <?php if($calificacion['id_alumno'] == $alumno['id_alumno']): ?>
-                        <option selected disabled>-Seleccionar-</option>
+                        <option <?php if($calificacion['calificacion'] == -1) echo "selected"?> disabled>-Seleccionar-</option>
                         <option <?php if($calificacion['calificacion'] == 10) echo "selected"?> >10</option>
                         <option <?php if($calificacion['calificacion'] == 9) echo "selected"?> >9</option>
                         <option <?php if($calificacion['calificacion'] == 8) echo "selected"?> >8</option>
@@ -81,21 +101,21 @@
                         <option <?php if($calificacion['calificacion'] == 3) echo "selected"?> >3</option>
                         <option <?php if($calificacion['calificacion'] == 2) echo "selected"?> >2</option>
                         <option <?php if($calificacion['calificacion'] == 1) echo "selected"?> >1</option>
+                        <option <?php if($calificacion['calificacion'] == 0) echo "selected"?> >0</option>
                         <?php endif; ?>     
                     <?php endforeach; ?>
-                  <?php else: //Si no hay calificaciones muestra el menú de opciones ?>
-                    <option selected disabled>-Seleccionar-</option>
-                    <option>10</option>
-                    <option>9</option>
-                    <option>8</option>
-                    <option>7</option>
-                    <option>6</option>
-                    <option>5</option>
-                    <option>4</option>
-                    <option>3</option>
-                    <option>2</option>
-                    <option>1</option>
-                  <?php endif; ?>
+                  <?php else: //Si no hay calificaciones muestra el menú de opciones 
+                    echo '<option selected disabled>-Seleccionar-</option><option>10</option><option>9</option><option>8</option><option>7</option><option>6</option><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option>';
+                  endif; ?>
+                  
+                  <?php 
+                   /* Cuando ya existen calificaciones guardadas pero se añade un nuevo alumno, es necesario mostrar la lista de seleccion para estos casos, de otro modo no se podría asignar calificacion dentro de una actividad ya registrada a un alumno que se acaba de integrar */
+                  if($listaCal != null){
+                    if(!in_array($alumno['id_alumno'], $listaCal, false)){
+                      echo '<option selected disabled>-Seleccionar-</option><option>10</option><option>9</option><option>8</option><option>7</option><option>6</option><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option>';
+                    }
+                  }?>
+              
                   </select>
                   </div>
                 </td>

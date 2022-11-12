@@ -87,7 +87,7 @@ class ActividadModel{
       $this->asignatura = mysqli_real_escape_string($this->db, $_POST['asignatura']);
       $this->nombre = mysqli_real_escape_string($this->db, $_POST['nombre']);
       if(isset($_POST['tipo'])){
-        
+        $this->tipo = mysqli_real_escape_string($this->db, $_POST['tipo']);
       }else{
         $this->tipo = "";
       }
@@ -130,6 +130,7 @@ class ActividadModel{
   }
 
   public function eliminarActividad($f){
+    $query = $this->db->query("SET FOREIGN_KEY_CHECKS=0");
     $query = $this->db->query("DELETE FROM actividades WHERE id_actividad = '$f'");
   }
 }
