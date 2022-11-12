@@ -37,7 +37,7 @@ class AsistenciaModel{
   }
 
   public function existeDia($fecha){
-    $query = $this->db->query("SELECT * FROM asistencias WHERE fecha_asistencia = '$fecha' ");
+    $query = $this->db->query("SELECT * FROM asistencias WHERE fecha_asistencia = '$fecha'");
 
     if($query->num_rows > 0){
       return true;
