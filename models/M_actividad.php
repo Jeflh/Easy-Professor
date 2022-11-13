@@ -82,7 +82,6 @@ class ActividadModel{
 
   public function insertarActividad(){
     if(isset($_POST)){
-      var_dump($_POST);
       $this->usuario = $_SESSION['usuario']['id_usuario'];
       $this->asignatura = mysqli_real_escape_string($this->db, $_POST['asignatura']);
       $this->nombre = mysqli_real_escape_string($this->db, $_POST['nombre']);
