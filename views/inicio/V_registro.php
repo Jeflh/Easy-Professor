@@ -52,6 +52,7 @@ if (isset($_GET['e'])) {
         <legend class="mt-4 text-center text-primary">
           <h1><strong>Registro</strong></h1>
         </legend>
+      </fieldset>
         <div class="form-group">
           <label for="apellido" class="form-label mt-2">Nombre</label>
           <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="nameHelp" placeholder="Ej. Emmanuel" autocomplete="off">
@@ -105,7 +106,7 @@ if (isset($_GET['e'])) {
         <div class="d-grid gap-2">
           <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
         </div>
-      </fieldset>
+
     </form>
   </div>
 </main>

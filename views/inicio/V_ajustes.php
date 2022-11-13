@@ -45,11 +45,13 @@ if (isset($_GET['e'])) {
 ?>
 
 <main>
-  <h1 class="text-primary text-center"><strong>Ajustes</strong></h1>
+ 
 
   <div class="container d-flex justify-content-center mb-3">
     <form data-bitwarden-watching="1" action="index.php?c=registro&a=validar&f=1" method="POST">
       <fieldset>
+        <legend> <h1 class="text-primary text-center mt-4"><strong>Ajustes de usuario</strong></h1></legend>
+      </fieldset>
         <div class="form-group">
           <label for="apellido" class="form-label mt-2">Nombre</label>
           <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="nameHelp" placeholder="Ej. Emmanuel" autocomplete="off" value="<?php echo $_SESSION['usuario']['nombre'];?>">
@@ -68,7 +70,7 @@ if (isset($_GET['e'])) {
         </div>
 
         <div class="form-group">
-          <label for="grado" class="form-label mt-4">Grado de tu grupo</label>
+          <label for="grado" class="form-label mt-2">Grado de tu grupo</label>
           <select class="form-select" id="grado" name="grado">
             <option <?php if($_SESSION['usuario']['grado'] == '1er grado') echo 'selected';?>>1er grado</option>
             <option <?php if($_SESSION['usuario']['grado'] == '2do grado') echo 'selected';?>>2do grado</option>
@@ -82,7 +84,7 @@ if (isset($_GET['e'])) {
         <div class="d-grid gap-2">
           <button type="submit" class="btn btn-primary mt-3">Actualizar información</button>
         </div>
-      </fieldset>
+   
     </form>
   </div>
     
