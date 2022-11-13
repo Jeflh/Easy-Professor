@@ -17,7 +17,20 @@ require_once('includes/loggedNav.php');
       </p>
     </div>
   </div>
-  
+
+  <?php
+  if (isset($_GET['e'])) {
+
+    $status = $_GET['e'];
+
+    if ($status == '0') {
+      echo '<div class="text-center alert alert-dismissible alert-success mt-1 mb-1">
+        <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+        <strong>Ajustes de usuario actualizados</strong>, los cambios se verán reflejados hasta que vuelva a iniciar sesión.
+        </div>';
+    }
+  }
+  ?>
   <h1 class="text-primary text-center"><strong>Panel de control</strong></h1>
 
   <div class="container">

@@ -22,7 +22,7 @@ class RegistroController {
 
     if(isset($_POST)){
       $usuario = new UsuariosModel();
-
+      $auth = autenticado();
       $nombre = $_POST['nombre'];
       $apellido = $_POST['apellido'];
       $correo = $_POST['correo'];
@@ -39,19 +39,37 @@ class RegistroController {
       if(empty($correo) || !filter_var($correo, FILTER_VALIDATE_EMAIL) ){
         $error .= '3'; // "El correo no es válido";
       }
-      if($usuario->validarCorreo()){
-        $error .= '4'; // "El correo ya existe";
-      } 
+      if($auth){
+        if($usuario->validarCorreo && $correo != $_SESSION['usuario']['correo']){
+          $error .= '4'; // "El correo ya está registrado";
+        }
+      } else{
+        if($usuario->validarCorreo()){
+          $error .= '4'; // "El correo ya existe";
+        } 
+      }
+      
       if(empty($password)){
         $error .= '5'; // "La contraseña está vacía";
       }
     
       if($error == ''){
-        $usuario->insertarUsuario();
-        header("Location: index.php?c=login&e=0");
-      
+        if(isset($_GET['f'])){
+          $usuario->actualizarUsuario();
+          header('Location: index.php?c=panel&e=0');
+
+        }else{
+          $usuario->insertarUsuario();
+          header("Location: index.php?c=login&e=0");
+        }
+            
       } else {
-        header("Location: index.php?c=registro&e=$error");
+        if(isset($_GET['f'])){
+          header("Location: index.php?c=ajustes&e=$error");
+        }else{
+          header("Location: index.php?c=registro&e=$error");
+        }
+        
       }
     }
   }
