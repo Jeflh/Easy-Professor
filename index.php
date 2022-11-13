@@ -18,7 +18,7 @@ if (isset($_GET['c'])) {
 		}
 	} else {
 			cargarAccion($controlador, MAIN_ACTION);
-		}
+	}
 } else {
 
 	$controlador = cargarControlador(MAIN_CONTROLLER);
