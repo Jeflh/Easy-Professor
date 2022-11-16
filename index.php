@@ -4,7 +4,6 @@ require_once "config/config.php";
 require_once "core/routes.php";
 require_once "core/funciones.php";
 require_once "config/db.php";
-require_once "controllers/Inicio.php";
 
 if (isset($_GET['c'])) {
 
