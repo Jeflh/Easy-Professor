@@ -19,7 +19,7 @@ require_once('includes/loggedNav.php');
 
       <p class="text-info text-end me-3 mb-0 lead">
         <?php date_default_timezone_set('America/Mexico_City');
-        echo date("Y/m/d") ?>
+        echo date("d/m/Y") ?>
       </p>
     </div>
   </div>
@@ -27,16 +27,16 @@ require_once('includes/loggedNav.php');
   <h1 class="text-primary text-center"><strong>Reporte individual</strong></h1>
   <h3 class="text-primary text-center"> <?php echo $alumno['info']['nombre'] . ' ' . $alumno['info']['apellido']; ?></h3>
 
-  <div class="container col-8">
+  <div class="container col-6">
     <div>
       <table class="table table-hover table-striped table-bordered ">
         <thead>
           <tr class="table-primary">
             <th scope="col">Materia</th>
-            <th scope="col">Promedio Trabajos</th>
-            <th scope="col">Promedio Tareas</th>
-            <th scope="col">Promedio Examenes</th>
-            <th scope="col">Calificacion</th>
+            <th scope="col"><?php echo $p_trabajos * 100 . '%';?> Trabajos</th>
+            <th scope="col"><?php echo $p_tareas * 100 . '%';?> Tareas</th>
+            <th scope="col"><?php echo $p_examenes * 100 . '%';?> Examenes</th>
+            <th scope="col">Calificación</th>
           </tr>
         </thead>
         <tbody>
@@ -53,12 +53,21 @@ require_once('includes/loggedNav.php');
       </table>
     </div>
 
+    <div class="card text-white bg-primary mb-3" style="max-width: 10rem;">
+      <div class="card-header text-center">Calificación final</div>
+      <div class="card-body">
+        <h4 class="card-title text-center"><?php echo $promFinal; ?></h4>
+      </div>
+    </div>
 
     <div class="mt-4">
+
       <div class="progress">
         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentajeAsistencia . '%'; ?>;"></div>
       </div>
-      <h4 class="text-end">Promedio de asistencia <?php echo $porcentajeAsistencia . '%'; ?></h4>
+      <h5 class="text-end">Porcentaje de asistencia <?php echo $porcentajeAsistencia . '%'; ?></h5>
+      
+      <h5 class="text-center">Del <strong><?php echo date("d/m/Y", strtotime($f_inicio));?></strong> al <strong><?php echo date("d/m/Y", strtotime($f_fin)); ?></strong></h5>
     </div>
 
   </div>

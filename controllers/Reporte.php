@@ -173,6 +173,13 @@ class ReporteController{
         );
       }
 
+      $promFinal = 0;
+      foreach($final as $calificacion){
+        $cal = floatval($calificacion['calificacion']);
+        $promFinal += $cal;
+      }
+
+      $promFinal = round($promFinal/count($final), 2);
       // echo '<pre>';
       // var_dump($final);
       // echo '</pre>';
