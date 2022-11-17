@@ -35,6 +35,7 @@ class CalificarController{
 
   public function guardar(){
     if(isset($_POST)){
+
       $calificar = new CalificacionModel();
       $datosExistentes = $calificar->existeCal($_POST['actividad']);
 
@@ -44,20 +45,23 @@ class CalificarController{
             'fecha_cal' => $_POST['fecha'],
             'id_alumno' => $this->listaInterna['alumnos'][$i]['id_alumno'],
             'actividad' => $_POST['actividad'],
+            'materia' => $_POST['materia'],
             'calificacion' => -1
           );
           $calificar->setCal($calificacionesIniciales[$i]);
         }
+        exit;
         $this->guardar();
       }
       else {
         $j = 0;
         foreach ($_POST as $key => $value) {
-          if ($key != 'fecha' && $key != 'actividad'){
+          if ($key != 'fecha' && $key != 'actividad' && $key != 'materia'){
             $confirmado [] = array(
               'fecha_cal' => $_POST['fecha'],
               'id_alumno' => $key,
               'actividad' => $_POST['actividad'],
+              'materia' => $_POST['materia'],
               'calificacion' => $value
             );
             if($datosExistentes){

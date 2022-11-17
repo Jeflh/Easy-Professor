@@ -125,6 +125,7 @@
         </table>
         <div class="d-grid col">
           <input type="hidden" id="actividad" name="actividad" value="<?php echo $datos['actividad']['id_actividad'];?>">
+          <input type="hidden" id="materia" name="materia" value="<?php echo $datos['actividad']['id_asignatura'];?>">
           <input type="hidden" id="fecha" name="fecha" value="<?php echo date('Y/m/d'); ?>">
           <button type="submit" class="btn btn-success mb-2">Guardar calificaciones</button>
         </div>
