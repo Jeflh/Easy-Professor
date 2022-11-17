@@ -28,6 +28,12 @@ class AsignaturaModel{
       return $row;
     }
   }
+
+  public function getEspecifico($id){
+    $query = $this->db->query("SELECT * FROM asignaturas WHERE id_asignatura = '$id'");
+    $row = $query->fetch_assoc();
+    return $row;
+  }
 }
 
 ?>

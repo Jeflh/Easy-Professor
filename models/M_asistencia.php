@@ -50,6 +50,16 @@ class AsistenciaModel{
     $id= $_GET['id'];
     $query = $this->db->query("DELETE FROM asistencias WHERE id_alumno = '$id'");
   }
+
+  public function getAsistencias($id, $inicio, $fin){
+    $query = $this->db->query("SELECT * FROM asistencias WHERE id_alumno = '$id' AND fecha_asistencia BETWEEN '$inicio' AND '$fin'");
+
+    while($row = $query->fetch_assoc()) {
+      $this->listaAsistencia[] = $row;
+    }
+
+    return $this->listaAsistencia;
+  }
 }
 
 ?>

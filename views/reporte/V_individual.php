@@ -8,7 +8,7 @@ require_once('includes/loggedNav.php');
 
   <div class="container d-flex justify-content-between">
     <div class="col">
-      <a href="index.php?c=reporte&a=elegir" class="btn btn-info mt-3"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+      <a href="index.php?c=reporte" class="btn btn-info mt-3"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
         </svg></a>
     </div>
@@ -43,7 +43,7 @@ require_once('includes/loggedNav.php');
               <th class="text-center text-primary" scope="row"> <?php echo $i ?></th>
               <td><?php echo $alumno['apellido']; ?></td>
               <td><?php echo $alumno['nombre']; ?></td>
-              <td class="text-center"><a class="text-info" href=""><strong>Generar</strong></a></td>
+              <td class="text-center"><a class="text-info" href="index.php?c=reporte&a=generarIndividual<?php echo '&id=' . $alumno['id_alumno'] . '&1=' . $_GET['1'] . '&2=' . $_GET['2']  . '&3='. $_GET['3']  . '&4=' . $_GET['4']  . '&5=' . $_GET['5'];?>"><strong>Generar</strong></a></td>
             </tr>
           <?php $i++;
           } ?>
