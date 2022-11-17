@@ -25,9 +25,9 @@ require_once('includes/loggedNav.php');
   </div>
 
   <h1 class="text-primary text-center"><strong>Reporte individual</strong></h1>
-  <h2 class="text-primary text-center"> <?php echo $alumno['info']['nombre'] . ' ' . $alumno['info']['apellido']; ?></h2>
+  <h3 class="text-primary text-center"> <?php echo $alumno['info']['nombre'] . ' ' . $alumno['info']['apellido']; ?></h3>
 
-  <div class="container">
+  <div class="container col-8">
     <div>
       <table class="table table-hover table-striped table-bordered ">
         <thead>
@@ -54,7 +54,7 @@ require_once('includes/loggedNav.php');
     </div>
 
 
-    <div class="mt-3">
+    <div class="mt-4">
       <div class="progress">
         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentajeAsistencia . '%'; ?>;"></div>
       </div>
