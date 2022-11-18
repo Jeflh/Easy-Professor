@@ -36,11 +36,11 @@ require_once('includes/noLoggedNav.php');
         <ul>
           <li>De acuerdo a las especificaciones técnicas indicadas para cada producto.
           </li>
-          <li>De acuerdo a las especificaciones técnicas indicadas para cada producto.
+          <li>En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
           </li>
-          <li>De acuerdo a las especificaciones técnicas indicadas para cada producto.
+          <li>En uso específico para la función con que fue diseñado de fábrica.
           </li>
-          <li>De acuerdo a las especificaciones técnicas indicadas para cada producto.
+          <li>En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
           </li>
         </ul>
 
