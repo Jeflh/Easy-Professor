@@ -1,0 +1,269 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: localhost    Database: easy_professor
+-- ------------------------------------------------------
+-- Server version	8.0.29
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `actividades`
+--
+
+DROP TABLE IF EXISTS `actividades`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `actividades` (
+  `id_actividad` int NOT NULL AUTO_INCREMENT,
+  `id_usuario` int NOT NULL,
+  `id_asignatura` int NOT NULL,
+  `nombre_act` varchar(45) DEFAULT NULL,
+  `tipo` int DEFAULT NULL,
+  `descripcion` varchar(250) DEFAULT NULL,
+  `fecha_actividad` date DEFAULT NULL,
+  PRIMARY KEY (`id_actividad`),
+  KEY `fk_actividades_asignaturas1_idx` (`id_asignatura`),
+  KEY `fk_actividades_usuarios1_idx` (`id_usuario`),
+  CONSTRAINT `fk_actividades_asignaturas1` FOREIGN KEY (`id_asignatura`) REFERENCES `asignaturas` (`id_asignatura`),
+  CONSTRAINT `fk_actividades_usuarios1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `actividades`
+--
+
+LOCK TABLES `actividades` WRITE;
+/*!40000 ALTER TABLE `actividades` DISABLE KEYS */;
+INSERT INTO `actividades` VALUES (1,1,13,'Actividad No. 1 Adivinemos en familia',1,'Lee las siguientes adivinanzas y une con una línea la adivinanza y el dibujo que corresponde.','2022-11-01'),(2,1,13,'Actividad No. 2 Juguemos en familia',2,'Con ayuda de un adulto elabora las siguientes tarjetas en una hoja blanca o de tu cuaderno.','2022-11-02'),(5,1,14,'Actividad No. 1 Cajas de chocolates',1,'La familia de Ana tiene una fábrica de galletas. Todos los días las empaquetan en cajitas poniendo 10 galletas en cada una. Observa la imagen y contesta.','2022-11-01'),(6,1,14,'Actividad No. 2 Completando cantidades',1,'Pepe y Camila juegan a completar cantidades usando tableros. Pepe pone soles y Camila pone palomitas Observa los tableros y dibuja y escribe cuántas palomitas debe poner Camila para completar la cantidad total','2022-11-02'),(7,1,14,'Actividad No. 3 Vamos a la tiendita',2,' Observa la tiendita y muéstrala a tu familia. Pídeles que seleccionen dos cosas que desearían comprar','2022-11-03'),(8,1,14,'Actividad No. 4 ¿Quién tiene más?',2,'Invita a un integrante de tu familia a jugar.','2022-11-04'),(9,1,14,'Actividad No. 5 Reconociendo figuras',3,'Une, con una línea de diferente color, el objeto con la figura que observas','2022-11-05'),(10,1,15,'Activity 1 Read, look, and match',1,'Une las palabras con su respectiva imagen.','2022-11-01'),(11,1,15,'Activity 2 Greetings',1,'Escribe los saludos de la actividad anterior coloréalo de verde.','2022-11-02'),(12,1,15,'Activity 3 Stop and go',2,'Colorea los semáforos. avance verde, esperar amarillo, alto rojo. Completa las oraciones.','2022-11-03'),(13,1,15,'Activity 4 About myself',2,'Completar con tu información personal (nombre, edad, color favorito, comida favorita) y haz un dibujo de tu familia.','2022-11-04'),(14,1,15,'Activity 5 I want to be a scientist',3,'Escribe los nombres en el recuadro correcto, usa el banco de palabras.','2022-11-05'),(15,1,16,'Actividad No. 1 Escribe Parte Del cuerpo',1,'Partes del cuerpo.','2022-11-01'),(16,1,16,'Actividad No. 2 Animales',2,'Une cada animal de su manera de desplazarse.','2022-11-02'),(17,1,16,'Actividad No. 3 Partes De las plantas',2,'Arrastra las partes de las plantas.','2022-11-03'),(18,1,16,'Actividad No. 4 La Materia Prima',1,'Averiguar que es la materia prima.','2022-11-04'),(19,1,16,'Activida No. 5 Flora y Fauna',3,'Escribe que es flora y fauna.','2022-11-05'),(20,1,17,'Actividad No. 1 El paisaje de mi localidad',1,'Describe las carácterisitcas de tu localidad.','2022-11-01'),(21,1,17,'Actividad No. 2 Costumbres y tradiciones',2,'Investigar 3 costumbre o trádiciones típicas en tu localidad.','2022-11-02'),(22,1,17,'Actividad No. 3 Municipio Donde Vivo',1,'Dibuja el contorno en  una hoja de tu municipio donde vives.','2022-11-03'),(23,1,17,'Actividad No. 4 Simbolos',3,'Dibuja en el siguiente croquis los simbolos que faltan.','2022-11-04'),(24,1,18,'Actividad No. 1 Mis emociones',1,'Selecciona una carita de las del circulo como te sientes hoy.','2022-11-01'),(25,1,18,'Actividad No. 2 Descripcion de ti mismo ',1,'Describete a ti mismo como eres y como te sientes de ti mismo.','2022-11-02'),(26,1,18,'Actividad No. 3 Cambios emocinales y fisicos',2,'Escribe en la pestalla los cambios emocionales.','2022-11-03'),(27,1,18,'Actividad No. 4 Que es etica y moral ',3,'Investiga lo que es etica y moral.','2022-11-04'),(45,1,13,'Actividad No. 3 \"Plural y Singular\"',2,'Elije la opción correcta para cada palabra según el contexto.','2022-11-03'),(46,1,13,'Actividad No. 4 \"Circula las palabras fonema\"',3,'Escribe las palabfras correctamente Ny Ñ.','2022-11-04'),(48,1,19,'Actividad No. 1 Pintura',1,'Hacer un dibujo con las acuarelas.','2022-11-01'),(49,1,19,'Actividad No. 2 Desarrollo de dibujo',2,'Desarrolla un muñeco con papel crepe','2022-11-02'),(50,1,19,'Actividad No. 3 La Danza',3,'Ensaya una Danza y muestrala a tus compañeros','2022-11-03'),(53,1,20,'Actividad No. 1 Ponchados',1,'Aventar la pelota despacio y ponchar a uno de tus compañeros.','2022-11-01'),(54,1,20,'Actividad No. 2  Jugar Basquetboll',3,'Atinarle a la canaste.','2022-11-02'),(55,1,20,'Actividad No. 3 Completar circuito',1,'Correr y tener el circuito acabado.','2022-11-03');
+/*!40000 ALTER TABLE `actividades` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `alumnos`
+--
+
+DROP TABLE IF EXISTS `alumnos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `alumnos` (
+  `id_alumno` int NOT NULL AUTO_INCREMENT,
+  `id_usuario` int NOT NULL,
+  `nombre` varchar(40) DEFAULT NULL,
+  `apellido` varchar(40) DEFAULT NULL,
+  `sexo` varchar(2) DEFAULT NULL,
+  `curp` varchar(18) DEFAULT NULL,
+  `edad` varchar(2) DEFAULT NULL,
+  `estatura` float DEFAULT NULL,
+  `nombre_tutor` varchar(80) DEFAULT NULL,
+  `telefono` varchar(10) DEFAULT NULL,
+  `discapacidad` varchar(50) DEFAULT NULL,
+  `observacion` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`id_alumno`),
+  KEY `fk_alumnos_usuarios1_idx` (`id_usuario`),
+  CONSTRAINT `fk_alumnos_usuarios1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `alumnos`
+--
+
+LOCK TABLES `alumnos` WRITE;
+/*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
+INSERT INTO `alumnos` VALUES (1,1,'Raúl','Gutierrez Del Campo','H','GUDR140924HJCDBC03','8',1.17,'Raul Gutierrez','3372017328','N/A',NULL),(2,1,'Alejandro','Valdez Gomez','H','VAGA140321HJCDKG05','8',1.24,'Alejandra Gomez','3327583378','N/A',NULL),(3,1,'Iker','Gonzales Videgaray','H','GOVI150210HJCSLE05','7',1.18,'Astrid Videgaray ','3389258812','N/A',NULL),(4,1,'Jimena','Hernandez Perez','M','HEPJ130915MJCFKW02','9',1.13,'Jose Hernandez','3367104622','N/A',NULL),(5,1,'Karina','Flores Ibarra','M','FLIK140429MJCDKR05','8',1.16,'Sarahi Ibarra','3317382000','N/A',NULL),(6,1,'Joceline','Aguilar Campos','M','AGCJ150301MJCHDR09','7',1.22,'Angel Aguilar ','3389103700','',''),(7,1,'Jazmin','Sandoval Iniguez ','M','SAIJ131223MJCFKD01','9',1.24,'Felipe Sandoval','3300167721','N/A',NULL),(8,1,'Derek','Barba Franco ','H','BAFD150530HJCSUR05','7',1.18,'Rodrigo Barba','3317564021','N/A',NULL),(9,1,'Daniela','Velazques  Torres','M','VETD141127MJCSKF09','8',1.19,'Eva Torres','3389460122','N/A',NULL),(10,1,'Juan Carlos','Esquivel Perez','H','ESPJ150817HJCERK04','7',1.25,'Justino Esquivel','3309905733','N/A',NULL),(11,1,'Ingrid','Lopez Galvan','M','LOGI140623MJCHDR06','8',1.17,'Jose Luis Lopez','3317461923','N/A',NULL),(12,1,'Felipe','Cardenaz Jimenez','H','CAJF140521HJCDIT03','8',1.21,'Carmen Jimenez','3317094627','N/A',NULL);
+/*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `asignaturas`
+--
+
+DROP TABLE IF EXISTS `asignaturas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `asignaturas` (
+  `id_asignatura` int NOT NULL AUTO_INCREMENT,
+  `grado` int DEFAULT NULL,
+  `nombre_asignatura` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_asignatura`)
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `asignaturas`
+--
+
+LOCK TABLES `asignaturas` WRITE;
+/*!40000 ALTER TABLE `asignaturas` DISABLE KEYS */;
+INSERT INTO `asignaturas` VALUES (1,1,'Español'),(2,1,'Matemáticas'),(3,1,'Inglés'),(4,1,'Conocimiento del medio'),(5,1,'Artes'),(6,1,'Educación física'),(7,2,'Español'),(8,2,'Matemáticas'),(9,2,'Inglés'),(10,2,'Conocimiento del medio'),(11,2,'Artes'),(12,2,'Educación física'),(13,3,'Español'),(14,3,'Matemáticas'),(15,3,'Inglés'),(16,3,'Ciencias naturales'),(17,3,'La entidad donde vivo'),(18,3,'Formación cívica y ética'),(19,3,'Artes'),(20,3,'Educación física'),(21,4,'Español'),(22,4,'Matemáticas'),(23,4,'Inglés'),(24,4,'Ciencias naturales'),(25,4,'Geografía'),(26,4,'Historia'),(27,4,'Formación cívica y ética'),(28,4,'Artes'),(29,4,'Educación física'),(30,5,'Español'),(31,5,'Matemáticas'),(32,5,'Inglés'),(33,5,'Ciencias naturales'),(34,5,'Geografía'),(35,5,'Historia'),(36,5,'Formación cívica y ética'),(37,5,'Artes'),(38,5,'Educación física'),(39,6,'Español'),(40,6,'Matemáticas'),(41,6,'Inglés'),(42,6,'Ciencias naturales'),(43,6,'Geografía'),(44,6,'Historia'),(45,6,'Formación cívica y ética'),(46,6,'Artes'),(47,6,'Educación física');
+/*!40000 ALTER TABLE `asignaturas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `asistencias`
+--
+
+DROP TABLE IF EXISTS `asistencias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `asistencias` (
+  `fecha_asistencia` date NOT NULL,
+  `id_alumno` int NOT NULL,
+  `asistencia` tinyint DEFAULT NULL,
+  KEY `fk_asistencias_alumnos1_idx` (`id_alumno`),
+  CONSTRAINT `fk_asistencias_alumnos1` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id_alumno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `asistencias`
+--
+
+LOCK TABLES `asistencias` WRITE;
+/*!40000 ALTER TABLE `asistencias` DISABLE KEYS */;
+INSERT INTO `asistencias` VALUES ('2022-11-03',6,1),('2022-11-03',8,1),('2022-11-03',12,1),('2022-11-03',10,1),('2022-11-03',5,0),('2022-11-03',3,0),('2022-11-03',1,1),('2022-11-03',4,1),('2022-11-03',11,1),('2022-11-03',7,1),('2022-11-03',2,0),('2022-11-03',9,1),('2022-11-04',6,1),('2022-11-04',8,1),('2022-11-04',12,1),('2022-11-04',10,1),('2022-11-04',5,1),('2022-11-04',3,1),('2022-11-04',1,0),('2022-11-04',4,1),('2022-11-04',11,1),('2022-11-04',7,1),('2022-11-04',2,1),('2022-11-04',9,0),('2022-11-02',6,1),('2022-11-02',8,1),('2022-11-02',12,1),('2022-11-02',10,1),('2022-11-02',5,1),('2022-11-02',3,1),('2022-11-02',1,1),('2022-11-02',4,1),('2022-11-02',11,1),('2022-11-02',7,1),('2022-11-02',2,1),('2022-11-02',9,1),('2022-11-01',6,1),('2022-11-01',8,1),('2022-11-01',12,1),('2022-11-01',10,1),('2022-11-01',5,1),('2022-11-01',3,1),('2022-11-01',1,1),('2022-11-01',4,1),('2022-11-01',11,1),('2022-11-01',7,1),('2022-11-01',2,1),('2022-11-01',9,0),('2022-11-07',6,1),('2022-11-07',8,1),('2022-11-07',12,1),('2022-11-07',10,0),('2022-11-07',5,0),('2022-11-07',3,1),('2022-11-07',1,1),('2022-11-07',4,1),('2022-11-07',11,1),('2022-11-07',7,1),('2022-11-07',2,1),('2022-11-07',9,1),('2022-11-08',6,1),('2022-11-08',8,1),('2022-11-08',12,0),('2022-11-08',10,1),('2022-11-08',5,0),('2022-11-08',3,1),('2022-11-08',1,1),('2022-11-08',4,1),('2022-11-08',11,1),('2022-11-08',7,1),('2022-11-08',2,1),('2022-11-08',9,0),('2022-11-09',6,1),('2022-11-09',8,1),('2022-11-09',12,1),('2022-11-09',10,1),('2022-11-09',5,1),('2022-11-09',3,1),('2022-11-09',1,1),('2022-11-09',4,1),('2022-11-09',11,1),('2022-11-09',7,1),('2022-11-09',2,1),('2022-11-09',9,1),('2022-11-10',6,1),('2022-11-10',8,1),('2022-11-10',12,1),('2022-11-10',10,1),('2022-11-10',5,1),('2022-11-10',3,1),('2022-11-10',1,1),('2022-11-10',4,1),('2022-11-10',11,1),('2022-11-10',7,1),('2022-11-10',2,1),('2022-11-10',9,1),('2022-11-14',6,1),('2022-11-14',8,1),('2022-11-14',12,1),('2022-11-14',10,0),('2022-11-14',5,1),('2022-11-14',3,1),('2022-11-14',1,1),('2022-11-14',4,1),('2022-11-14',11,1),('2022-11-14',7,1),('2022-11-14',2,1),('2022-11-14',9,1),('2022-11-15',6,1),('2022-11-15',8,1),('2022-11-15',12,1),('2022-11-15',10,1),('2022-11-15',5,1),('2022-11-15',3,1),('2022-11-15',1,1),('2022-11-15',4,1),('2022-11-15',11,1),('2022-11-15',7,1),('2022-11-15',2,1),('2022-11-15',9,1),('2022-11-16',6,1),('2022-11-16',8,1),('2022-11-16',12,0),('2022-11-16',10,1),('2022-11-16',5,1),('2022-11-16',3,1),('2022-11-16',1,1),('2022-11-16',4,1),('2022-11-16',11,1),('2022-11-16',7,1),('2022-11-16',2,1),('2022-11-16',9,0),('2022-11-11',6,1),('2022-11-11',8,1),('2022-11-11',12,1),('2022-11-11',10,1),('2022-11-11',5,1),('2022-11-11',3,1),('2022-11-11',1,1),('2022-11-11',4,1),('2022-11-11',11,1),('2022-11-11',7,1),('2022-11-11',2,1),('2022-11-11',9,1),('2022-11-17',6,0),('2022-11-17',8,1),('2022-11-17',12,1),('2022-11-17',10,1),('2022-11-17',5,1),('2022-11-17',3,1),('2022-11-17',1,1),('2022-11-17',4,1),('2022-11-17',11,1),('2022-11-17',7,1),('2022-11-17',2,1),('2022-11-17',9,1),('2022-11-18',6,1),('2022-11-18',8,1),('2022-11-18',12,0),('2022-11-18',10,1),('2022-11-18',5,1),('2022-11-18',3,0),('2022-11-18',1,1),('2022-11-18',4,1),('2022-11-18',11,1),('2022-11-18',7,0),('2022-11-18',2,1),('2022-11-18',9,1);
+/*!40000 ALTER TABLE `asistencias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `calificacion`
+--
+
+DROP TABLE IF EXISTS `calificacion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `calificacion` (
+  `fecha_cal` date NOT NULL,
+  `id_alumno` int NOT NULL,
+  `id_actividad` int NOT NULL,
+  `calificacion` int DEFAULT NULL,
+  `id_asignatura` int DEFAULT NULL,
+  KEY `fk_calificacion_alumnos1_idx` (`id_alumno`),
+  KEY `fk_calificacion_actividades1_idx` (`id_actividad`),
+  CONSTRAINT `fk_calificacion_actividades1` FOREIGN KEY (`id_actividad`) REFERENCES `actividades` (`id_actividad`),
+  CONSTRAINT `fk_calificacion_alumnos1` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id_alumno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `calificacion`
+--
+
+LOCK TABLES `calificacion` WRITE;
+/*!40000 ALTER TABLE `calificacion` DISABLE KEYS */;
+INSERT INTO `calificacion` VALUES ('2022-11-11',1,1,8,13),('2022-11-11',2,1,10,13),('2022-11-11',3,1,7,13),('2022-11-11',4,1,8,13),('2022-11-11',5,1,10,13),('2022-11-11',6,1,10,13),('2022-11-11',7,1,10,13),('2022-11-11',8,1,7,13),('2022-11-11',9,1,10,13),('2022-11-11',10,1,8,13),('2022-11-11',11,1,9,13),('2022-11-11',12,1,7,13),('2022-11-12',6,2,10,13),('2022-11-12',8,2,7,13),('2022-11-12',12,2,9,13),('2022-11-12',10,2,9,13),('2022-11-12',5,2,9,13),('2022-11-12',3,2,7,13),('2022-11-12',1,2,8,13),('2022-11-12',4,2,9,13),('2022-11-12',11,2,10,13),('2022-11-12',7,2,9,13),('2022-11-12',2,2,8,13),('2022-11-12',9,2,9,13),('2022-11-12',6,45,10,13),('2022-11-12',8,45,7,13),('2022-11-12',12,45,7,13),('2022-11-12',10,45,7,13),('2022-11-12',5,45,9,13),('2022-11-12',3,45,7,13),('2022-11-12',1,45,9,13),('2022-11-12',4,45,9,13),('2022-11-12',11,45,10,13),('2022-11-12',7,45,6,13),('2022-11-12',2,45,7,13),('2022-11-12',9,45,9,13),('2022-11-12',6,46,10,13),('2022-11-12',8,46,9,13),('2022-11-12',12,46,8,13),('2022-11-12',10,46,9,13),('2022-11-12',5,46,9,13),('2022-11-12',3,46,8,13),('2022-11-12',1,46,9,13),('2022-11-12',4,46,8,13),('2022-11-12',11,46,9,13),('2022-11-12',7,46,7,13),('2022-11-12',2,46,9,13),('2022-11-12',9,46,9,13),('2022-11-12',6,9,9,14),('2022-11-12',8,9,7,14),('2022-11-12',12,9,8,14),('2022-11-12',10,9,6,14),('2022-11-12',5,9,9,14),('2022-11-12',3,9,8,14),('2022-11-12',1,9,8,14),('2022-11-12',4,9,9,14),('2022-11-12',11,9,7,14),('2022-11-12',7,9,8,14),('2022-11-12',2,9,10,14),('2022-11-12',9,9,10,14),('2022-11-12',6,8,9,14),('2022-11-12',8,8,8,14),('2022-11-12',12,8,8,14),('2022-11-12',10,8,6,14),('2022-11-12',5,8,10,14),('2022-11-12',3,8,7,14),('2022-11-12',1,8,8,14),('2022-11-12',4,8,9,14),('2022-11-12',11,8,8,14),('2022-11-12',7,8,9,14),('2022-11-12',2,8,7,14),('2022-11-12',9,8,10,14),('2022-11-12',6,7,10,14),('2022-11-12',8,7,7,14),('2022-11-12',12,7,6,14),('2022-11-12',10,7,7,14),('2022-11-12',5,7,9,14),('2022-11-12',3,7,9,14),('2022-11-12',1,7,9,14),('2022-11-12',4,7,8,14),('2022-11-12',11,7,8,14),('2022-11-12',7,7,9,14),('2022-11-12',2,7,7,14),('2022-11-12',9,7,6,14),('2022-11-12',6,6,8,14),('2022-11-12',8,6,8,14),('2022-11-12',12,6,8,14),('2022-11-12',10,6,8,14),('2022-11-12',5,6,9,14),('2022-11-12',3,6,7,14),('2022-11-12',1,6,7,14),('2022-11-12',4,6,9,14),('2022-11-12',11,6,10,14),('2022-11-12',7,6,8,14),('2022-11-12',2,6,9,14),('2022-11-12',9,6,10,14),('2022-11-12',6,5,6,14),('2022-11-12',8,5,8,14),('2022-11-12',12,5,8,14),('2022-11-12',10,5,7,14),('2022-11-12',5,5,9,14),('2022-11-12',3,5,8,14),('2022-11-12',1,5,5,14),('2022-11-12',4,5,9,14),('2022-11-12',11,5,9,14),('2022-11-12',7,5,10,14),('2022-11-12',2,5,7,14),('2022-11-12',9,5,8,14),('2022-11-12',6,10,9,15),('2022-11-12',8,10,7,15),('2022-11-12',12,10,6,15),('2022-11-12',10,10,9,15),('2022-11-12',5,10,8,15),('2022-11-12',3,10,8,15),('2022-11-12',1,10,9,15),('2022-11-12',4,10,7,15),('2022-11-12',11,10,5,15),('2022-11-12',7,10,6,15),('2022-11-12',2,10,10,15),('2022-11-12',9,10,8,15),('2022-11-12',6,11,8,15),('2022-11-12',8,11,7,15),('2022-11-12',12,11,7,15),('2022-11-12',10,11,9,15),('2022-11-12',5,11,9,15),('2022-11-12',3,11,8,15),('2022-11-12',1,11,7,15),('2022-11-12',4,11,6,15),('2022-11-12',11,11,8,15),('2022-11-12',7,11,9,15),('2022-11-12',2,11,10,15),('2022-11-12',9,11,10,15),('2022-11-12',6,12,8,15),('2022-11-12',8,12,5,15),('2022-11-12',12,12,9,15),('2022-11-12',10,12,4,15),('2022-11-12',5,12,8,15),('2022-11-12',3,12,8,15),('2022-11-12',1,12,8,15),('2022-11-12',4,12,8,15),('2022-11-12',11,12,8,15),('2022-11-12',7,12,8,15),('2022-11-12',2,12,9,15),('2022-11-12',9,12,8,15),('2022-11-12',6,13,8,15),('2022-11-12',8,13,6,15),('2022-11-12',12,13,5,15),('2022-11-12',10,13,8,15),('2022-11-12',5,13,7,15),('2022-11-12',3,13,7,15),('2022-11-12',1,13,6,15),('2022-11-12',4,13,9,15),('2022-11-12',11,13,7,15),('2022-11-12',7,13,9,15),('2022-11-12',2,13,9,15),('2022-11-12',9,13,9,15),('2022-11-12',6,14,7,15),('2022-11-12',8,14,8,15),('2022-11-12',12,14,7,15),('2022-11-12',10,14,7,15),('2022-11-12',5,14,7,15),('2022-11-12',3,14,9,15),('2022-11-12',1,14,8,15),('2022-11-12',4,14,8,15),('2022-11-12',11,14,10,15),('2022-11-12',7,14,10,15),('2022-11-12',2,14,9,15),('2022-11-12',9,14,10,15),('2022-11-12',6,15,9,16),('2022-11-12',8,15,6,16),('2022-11-12',12,15,8,16),('2022-11-12',10,15,8,16),('2022-11-12',5,15,9,16),('2022-11-12',3,15,8,16),('2022-11-12',1,15,6,16),('2022-11-12',4,15,8,16),('2022-11-12',11,15,8,16),('2022-11-12',7,15,8,16),('2022-11-12',2,15,8,16),('2022-11-12',9,15,10,16),('2022-11-12',6,16,10,16),('2022-11-12',8,16,9,16),('2022-11-12',12,16,10,16),('2022-11-12',10,16,7,16),('2022-11-12',5,16,5,16),('2022-11-12',3,16,8,16),('2022-11-12',1,16,7,16),('2022-11-12',4,16,5,16),('2022-11-12',11,16,8,16),('2022-11-12',7,16,10,16),('2022-11-12',2,16,9,16),('2022-11-12',9,16,7,16),('2022-11-12',6,17,8,16),('2022-11-12',8,17,7,16),('2022-11-12',12,17,7,16),('2022-11-12',10,17,8,16),('2022-11-12',5,17,9,16),('2022-11-12',3,17,9,16),('2022-11-12',1,17,10,16),('2022-11-12',4,17,7,16),('2022-11-12',11,17,9,16),('2022-11-12',7,17,8,16),('2022-11-12',2,17,10,16),('2022-11-12',9,17,7,16),('2022-11-12',6,18,8,16),('2022-11-12',8,18,8,16),('2022-11-12',12,18,7,16),('2022-11-12',10,18,5,16),('2022-11-12',5,18,7,16),('2022-11-12',3,18,8,16),('2022-11-12',1,18,4,16),('2022-11-12',4,18,6,16),('2022-11-12',11,18,8,16),('2022-11-12',7,18,5,16),('2022-11-12',2,18,8,16),('2022-11-12',9,18,9,16),('2022-11-12',6,19,9,16),('2022-11-12',8,19,8,16),('2022-11-12',12,19,7,16),('2022-11-12',10,19,8,16),('2022-11-12',5,19,8,16),('2022-11-12',3,19,7,16),('2022-11-12',1,19,6,16),('2022-11-12',4,19,8,16),('2022-11-12',11,19,8,16),('2022-11-12',7,19,8,16),('2022-11-12',2,19,7,16),('2022-11-12',9,19,8,16),('2022-11-12',6,20,5,17),('2022-11-12',8,20,8,17),('2022-11-12',12,20,7,17),('2022-11-12',10,20,7,17),('2022-11-12',5,20,9,17),('2022-11-12',3,20,8,17),('2022-11-12',1,20,8,17),('2022-11-12',4,20,6,17),('2022-11-12',11,20,7,17),('2022-11-12',7,20,6,17),('2022-11-12',2,20,8,17),('2022-11-12',9,20,8,17),('2022-11-12',6,21,9,17),('2022-11-12',8,21,7,17),('2022-11-12',12,21,8,17),('2022-11-12',10,21,7,17),('2022-11-12',5,21,7,17),('2022-11-12',3,21,7,17),('2022-11-12',1,21,6,17),('2022-11-12',4,21,8,17),('2022-11-12',11,21,7,17),('2022-11-12',7,21,7,17),('2022-11-12',2,21,8,17),('2022-11-12',9,21,10,17),('2022-11-12',6,22,8,17),('2022-11-12',8,22,9,17),('2022-11-12',12,22,6,17),('2022-11-12',10,22,6,17),('2022-11-12',5,22,7,17),('2022-11-12',3,22,8,17),('2022-11-12',1,22,6,17),('2022-11-12',4,22,7,17),('2022-11-12',11,22,8,17),('2022-11-12',7,22,8,17),('2022-11-12',2,22,5,17),('2022-11-12',9,22,9,17),('2022-11-12',6,23,10,17),('2022-11-12',8,23,5,17),('2022-11-12',12,23,8,17),('2022-11-12',10,23,7,17),('2022-11-12',5,23,8,17),('2022-11-12',3,23,6,17),('2022-11-12',1,23,8,17),('2022-11-12',4,23,4,17),('2022-11-12',11,23,7,17),('2022-11-12',7,23,5,17),('2022-11-12',2,23,6,17),('2022-11-12',9,23,5,17),('2022-11-12',6,24,7,18),('2022-11-12',8,24,7,18),('2022-11-12',12,24,8,18),('2022-11-12',10,24,10,18),('2022-11-12',5,24,8,18),('2022-11-12',3,24,8,18),('2022-11-12',1,24,9,18),('2022-11-12',4,24,9,18),('2022-11-12',11,24,9,18),('2022-11-12',7,24,9,18),('2022-11-12',2,24,10,18),('2022-11-12',9,24,10,18),('2022-11-12',6,25,4,18),('2022-11-12',8,25,5,18),('2022-11-12',12,25,9,18),('2022-11-12',10,25,8,18),('2022-11-12',5,25,6,18),('2022-11-12',3,25,9,18),('2022-11-12',1,25,7,18),('2022-11-12',4,25,8,18),('2022-11-12',11,25,7,18),('2022-11-12',7,25,9,18),('2022-11-12',2,25,8,18),('2022-11-12',9,25,10,18),('2022-11-12',6,26,7,18),('2022-11-12',8,26,10,18),('2022-11-12',12,26,10,18),('2022-11-12',10,26,9,18),('2022-11-12',5,26,9,18),('2022-11-12',3,26,5,18),('2022-11-12',1,26,6,18),('2022-11-12',4,26,9,18),('2022-11-12',11,26,9,18),('2022-11-12',7,26,9,18),('2022-11-12',2,26,8,18),('2022-11-12',9,26,10,18),('2022-11-12',6,27,9,18),('2022-11-12',8,27,8,18),('2022-11-12',12,27,8,18),('2022-11-12',10,27,8,18),('2022-11-12',5,27,9,18),('2022-11-12',3,27,8,18),('2022-11-12',1,27,7,18),('2022-11-12',4,27,7,18),('2022-11-12',11,27,10,18),('2022-11-12',7,27,6,18),('2022-11-12',2,27,6,18),('2022-11-12',9,27,9,18),('2022-11-12',6,48,7,19),('2022-11-12',8,48,4,19),('2022-11-12',12,48,9,19),('2022-11-12',10,48,8,19),('2022-11-12',5,48,5,19),('2022-11-12',3,48,8,19),('2022-11-12',1,48,7,19),('2022-11-12',4,48,8,19),('2022-11-12',11,48,7,19),('2022-11-12',7,48,7,19),('2022-11-12',2,48,8,19),('2022-11-12',9,48,8,19),('2022-11-12',6,49,8,19),('2022-11-12',8,49,8,19),('2022-11-12',12,49,8,19),('2022-11-12',10,49,7,19),('2022-11-12',5,49,9,19),('2022-11-12',3,49,7,19),('2022-11-12',1,49,9,19),('2022-11-12',4,49,8,19),('2022-11-12',11,49,10,19),('2022-11-12',7,49,7,19),('2022-11-12',2,49,9,19),('2022-11-12',9,49,10,19),('2022-11-12',6,50,8,19),('2022-11-12',8,50,9,19),('2022-11-12',12,50,7,19),('2022-11-12',10,50,8,19),('2022-11-12',5,50,8,19),('2022-11-12',3,50,6,19),('2022-11-12',1,50,8,19),('2022-11-12',4,50,9,19),('2022-11-12',11,50,9,19),('2022-11-12',7,50,8,19),('2022-11-12',2,50,9,19),('2022-11-12',9,50,10,19),('2022-11-12',6,53,9,20),('2022-11-12',8,53,9,20),('2022-11-12',12,53,10,20),('2022-11-12',10,53,9,20),('2022-11-12',5,53,10,20),('2022-11-12',3,53,9,20),('2022-11-12',1,53,10,20),('2022-11-12',4,53,9,20),('2022-11-12',11,53,10,20),('2022-11-12',7,53,9,20),('2022-11-12',2,53,10,20),('2022-11-12',9,53,10,20),('2022-11-12',6,54,10,20),('2022-11-12',8,54,8,20),('2022-11-12',12,54,9,20),('2022-11-12',10,54,10,20),('2022-11-12',5,54,10,20),('2022-11-12',3,54,9,20),('2022-11-12',1,54,9,20),('2022-11-12',4,54,8,20),('2022-11-12',11,54,9,20),('2022-11-12',7,54,10,20),('2022-11-12',2,54,8,20),('2022-11-12',9,54,10,20),('2022-11-12',6,55,10,20),('2022-11-12',8,55,9,20),('2022-11-12',12,55,8,20),('2022-11-12',10,55,8,20),('2022-11-12',5,55,9,20),('2022-11-12',3,55,9,20),('2022-11-12',1,55,9,20),('2022-11-12',4,55,9,20),('2022-11-12',11,55,8,20),('2022-11-12',7,55,8,20),('2022-11-12',2,55,9,20),('2022-11-12',9,55,8,20);
+/*!40000 ALTER TABLE `calificacion` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `domicilio`
+--
+
+DROP TABLE IF EXISTS `domicilio`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `domicilio` (
+  `id_domicilio` int NOT NULL AUTO_INCREMENT,
+  `id_alumno` int NOT NULL,
+  `estado` varchar(30) DEFAULT NULL,
+  `municipio` varchar(30) DEFAULT NULL,
+  `calle` varchar(45) DEFAULT NULL,
+  `numero` varchar(8) DEFAULT NULL,
+  `colonia` varchar(30) DEFAULT NULL,
+  `cp` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id_domicilio`),
+  KEY `fk_domicilio_alumnos_idx` (`id_alumno`),
+  CONSTRAINT `fk_domicilio_alumnos` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id_alumno`)
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `domicilio`
+--
+
+LOCK TABLES `domicilio` WRITE;
+/*!40000 ALTER TABLE `domicilio` DISABLE KEYS */;
+INSERT INTO `domicilio` VALUES (1,1,'Jalisco','Guadalajara','Francisco Villa','1167','Talpita','44730'),(2,2,'Jalisco','Zapopan','Pablo Valdez','5623','Oblatos','44720'),(3,3,'Jalisco','Tonala','Benito Juarez','8926','Circunvalacion Norte','44790'),(4,4,'Jalisco','Guadalajara','San Esteban','126','Independencia','44730'),(5,5,'Jalisco','Guadalajara ','Arquidmides','738','San Isidro','44760'),(6,6,'Jalisco','Tonala','Av.Patria','23','Alcalde','44710'),(7,7,'Jalisco','Tonala','Santo Tomas','382','Atlas','44780'),(8,8,'Jalisco','Guadalajara','Av.Jaramillo','4389','Jalisco','44790'),(9,9,'Jalisco','Zapopan','Av.Javier Mina','238','Coli','44720'),(10,10,'Jalisco','Zapopan','San Sixto','115','Oblatos','44750'),(11,11,'Jalisco','Guadalajara','Av.Presa Laurel','172','Tetlan','44760'),(12,12,'Jalisco','Tonala','Hacienda de Tala','89','San Andres','44720'),(65,6,'Jalisco','Tonala','Av.Patria','23','Alcalde','44710');
+/*!40000 ALTER TABLE `domicilio` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ponderacion`
+--
+
+DROP TABLE IF EXISTS `ponderacion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ponderacion` (
+  `id_ponderacion` int NOT NULL AUTO_INCREMENT,
+  `id_usuario` int NOT NULL,
+  `pond_examen` int DEFAULT NULL,
+  `pond_trabajos` int DEFAULT NULL,
+  `pond_tareas` int DEFAULT NULL,
+  PRIMARY KEY (`id_ponderacion`),
+  KEY `fk_ponderacion_usuarios1_idx` (`id_usuario`),
+  CONSTRAINT `fk_ponderacion_usuarios1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ponderacion`
+--
+
+LOCK TABLES `ponderacion` WRITE;
+/*!40000 ALTER TABLE `ponderacion` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ponderacion` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
+  `id_usuario` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) DEFAULT NULL,
+  `apellido` varchar(50) DEFAULT NULL,
+  `correo` varchar(50) DEFAULT NULL,
+  `password` varchar(60) DEFAULT NULL,
+  `grado` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'Emmanuel','Fernández','Jeflh21@gmail.com','$2y$10$ijiIyHOHhO15pe4lm4jGd.w4SIIt73qpYstP5eyMk4LUteT7bDca.','3er grado'),(2,'Paola','Novelo','PaolaNovelo@gmail.com','$2y$10$j959E.Ic8yr9/5KNJtFvN.UaAJedv6HjldKiYYXw3y/m2lig.Kkoa','5to grado'),(3,'Daniel','Hernández','daniel@gmail.com','$2y$10$FJt9ikpemeJPbLOyTiSOXu7y.Nw5QOyIDviaKCoJAvbIzzPrhlt5m','4to grado'),(64,'Jesús','Fernández','Jesus@gmail.com','$2y$10$MUfD1MV/HD71b8EOGMFgUe40Uduqg3i5KXwnRMDWyAm.9rS1IKrWu','5to grado');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'easy_professor'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-11-17 18:25:39
