@@ -56,6 +56,12 @@ require_once('includes/loggedNav.php');
           <strong>Fecha no válida</strong>, por favor introduce una fecha válida.
           </div>';
           break;
+        case "5":
+          echo '<div class="text-center alert alert-dismissible alert-danger mb-1">
+          <button type="button" class="btn-close " data-bs-dismiss="alert"></button>
+          <strong>Fecha no válida</strong>, la fecha de inicio debe ser menor a la fecha de fin.
+          </div>';
+          break;
       }
     }
   }
