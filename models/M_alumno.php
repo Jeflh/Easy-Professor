@@ -257,6 +257,14 @@ class AlumnoModel{
     $query = $this->db->query("SET FOREIGN_KEY_CHECKS=0");
     $query = $this->db->query("DELETE FROM alumnos WHERE id_alumno = '$this->id_alumno'");
   }
+
+  public function getAlumno($id) {
+    $query = $this->db->query("SELECT * FROM alumnos WHERE id_alumno = '$id'");
+
+    $this->infoAlumno = $query->fetch_assoc();
+
+    return $this->infoAlumno;
+  }
 }
 
 ?>
