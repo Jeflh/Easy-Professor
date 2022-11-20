@@ -58,17 +58,9 @@ class AsistenciaController
             'asistencia' => 0
           );
           $asistencia->setDia($asistenciasIniciales[$i]);
-          $this->guardar();
         }
+        $this->guardar();
       }else {
-        for($i = 0; $i < count($this->listaInterna['alumnos']); $i++){
-          $asistenciasIniciales [] = array(
-            'fecha_asistencia' => $_POST['fecha'],
-            'id_alumno' => $this->listaInterna['alumnos'][$i]['id_alumno'],
-            'asistencia' => 0
-          );
-          $asistencia->updateDia($asistenciasIniciales[$i]);
-        }
         $j = 0;
         foreach ($_POST as $key => $value) {
           if ($key != 'fecha'){
