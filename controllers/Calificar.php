@@ -57,7 +57,7 @@ class CalificarController{
         $j = 0;
         foreach ($_POST as $key => $value) {
           if ($key != 'fecha' && $key != 'actividad' && $key != 'materia'){
-            $confirmado [] = array(
+            $confirmado [$j] = array(
               'fecha_cal' => $_POST['fecha'],
               'id_alumno' => $key,
               'actividad' => $_POST['actividad'],
